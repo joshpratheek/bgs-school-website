@@ -537,6 +537,8 @@ document.addEventListener('click', function(e) {
     </div>
 </div>
 
+
+
 <style>
 /* ============================================================
    BGS HERO SLIDER — FIXED: CENTERED ARROWS + SLIDE 4 2-IMAGE
@@ -568,7 +570,7 @@ document.addEventListener('click', function(e) {
 .bgs-slide {
     min-width: 100%;
     width: 100%;
-    min-height: calc(100vh - 68px);
+    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: stretch;
@@ -660,6 +662,26 @@ document.addEventListener('click', function(e) {
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+
+  .bgs-slide-1 {
+
+      background:
+      linear-gradient(
+          rgba(7,17,36,0.40),
+          rgba(7,17,36,0.68)
+      ),
+      url('images/buildingm.png');
+
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      min-height: 100vh;
+  }
+
 }
 
 .bgs-slide-1::before{
