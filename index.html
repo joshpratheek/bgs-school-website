@@ -1261,6 +1261,8 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     var isPaused = false;
     var touchStartX = 0;
     var touchStartY = 0;
+    var isTransitioning = false;
+    var scrollLockActive = false;
 
     function updateHeroHeight() {
         if (window.innerWidth <= 640) {
@@ -1278,6 +1280,15 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     }
 
     function goTo(index) {
+        if (isTransitioning) return;
+        
+        isTransitioning = true;
+        scrollLockActive = true;
+        
+        // Lock scroll position while transitioning
+        var scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        
         current = (index + total) % total;
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
 
@@ -1286,6 +1297,14 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
         });
 
         updateHeroHeight();
+        
+        // Unlock after transition completes
+        setTimeout(function() {
+            document.body.style.overflow = '';
+            window.scrollTo(0, scrollY);
+            isTransitioning = false;
+            scrollLockActive = false;
+        }, 760);
     }
 
     function nextSlide() { goTo(current + 1); }
@@ -1294,7 +1313,13 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     function startAuto() {
         clearInterval(autoTimer);
         if (!isPaused) {
-            autoTimer = setInterval(nextSlide, 5000);
+            autoTimer = setInterval(function() {
+                // Only auto-advance if not scrolled away from hero
+                var heroBottom = slider.getBoundingClientRect().bottom;
+                if (heroBottom > 0) {
+                    nextSlide();
+                }
+            }, 5000);
         }
     }
 
@@ -1346,12 +1371,16 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     slider.addEventListener('mouseleave', resumeSlider);
 
     slider.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
+        if (e.touches && e.touches.length > 0) {
+            touchStartX = e.touches[0].screenX;
+            touchStartY = e.touches[0].screenY;
+        }
         pauseSlider();
     }, { passive: true });
 
     slider.addEventListener('touchend', function(e) {
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        
         var touchEndX = e.changedTouches[0].screenX;
         var touchEndY = e.changedTouches[0].screenY;
         var diffX = touchStartX - touchEndX;
@@ -1363,10 +1392,20 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
             } else {
                 prevSlide();
             }
+            pauseThenResume();
+        } else {
+            resumeSlider();
         }
+    }, { passive: true });
 
-        clearTimeout(restartTimer);
-        restartTimer = setTimeout(resumeSlider, 5000);
+    // Pause auto-play when user leaves hero section
+    window.addEventListener('scroll', function() {
+        var heroRect = slider.getBoundingClientRect();
+        
+        if (heroRect.bottom < 0) {
+            // User has scrolled past the hero
+            pauseSlider();
+        }
     }, { passive: true });
 
     window.addEventListener('resize', updateHeroHeight);
@@ -1380,8 +1419,6 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     startAuto();
 })();
 </script>
-
-</div>
 
 
 <!-- FOUNDER MESSAGE -->
@@ -1555,6 +1592,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
       }
     }
   </style>
+
+  <!--FOUNDER MESSAGE-->
+
+
 <section class="msg-section" id="chairman-message" aria-label="Message from Dr. Khadar Khan, Chairman and Founder of British Grammar School Secunderabad">
   <div class="msg-inner">
 
