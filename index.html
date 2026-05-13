@@ -3257,8 +3257,7 @@ html {
     
     isTransitioning = true;
     
-    // GLITCH FIX: Prevent scroll during transform
-    const scrollY = window.scrollY;
+    
     
     carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
@@ -3269,11 +3268,9 @@ html {
       thumb.classList.toggle("active", index === currentSlide);
     });
 
-    // Prevent scroll jump after transition
     setTimeout(function () {
-      window.scrollTo(0, scrollY);
-      isTransitioning = false;
-    }, 10);
+  isTransitioning = false;
+}, 600);
   }
 
   function nextSlide() {
@@ -3324,12 +3321,7 @@ html {
     });
   });
 
-  // GLITCH FIX: Prevent wheel/scroll events from affecting carousel
-  carousel.addEventListener("wheel", function (e) {
-    if (e.deltaY !== 0) {
-      e.preventDefault();
-    }
-  }, { passive: false });
+  
 
   renderSlides();
   renderThumbnails();
