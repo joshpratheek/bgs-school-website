@@ -2951,7 +2951,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
-
+  /* GLITCH FIX: Prevent reflow and scroll jumps */
+  contain: layout style paint;
+  will-change: auto;
+  overflow-anchor: none;
 }
 
 .carousel {
@@ -3254,7 +3257,8 @@ html {
     
     isTransitioning = true;
     
-    
+    // GLITCH FIX: Prevent scroll during transform
+    const scrollY = window.scrollY;
     
     carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
@@ -3265,9 +3269,11 @@ html {
       thumb.classList.toggle("active", index === currentSlide);
     });
 
+    // Prevent scroll jump after transition
     setTimeout(function () {
-  isTransitioning = false;
-}, 600);
+      window.scrollTo(0, scrollY);
+      isTransitioning = false;
+    }, 10);
   }
 
   function nextSlide() {
@@ -3318,7 +3324,12 @@ html {
     });
   });
 
-  
+  // GLITCH FIX: Prevent wheel/scroll events from affecting carousel
+  carousel.addEventListener("wheel", function (e) {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 
   renderSlides();
   renderThumbnails();
