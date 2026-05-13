@@ -2849,7 +2849,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 }
 </style>
   
-<!-- CAMPUS GALLERY SECTION - GLITCH FIXED -->
+<!-- CAMPUS GALLERY SECTION - MOBILE GLITCH FIXED -->
 
 <section class="gallery-section" id="campus-gallery">
   <div class="gallery-container">
@@ -2883,6 +2883,17 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 </section>
 
 <style>
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  overflow-anchor: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior: none;
+}
+
 .gallery-section {
   width: 100%;
   background: linear-gradient(135deg, #0a1128 0%, #1a2847 100%);
@@ -2890,6 +2901,8 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   font-family: 'DM Sans', sans-serif;
   position: relative;
   z-index: 1;
+  overflow-anchor: none;
+  box-sizing: border-box;
 }
 
 .gallery-container {
@@ -2936,6 +2949,9 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   cursor: pointer;
   border-radius: 999px;
   transition: 0.25s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
 }
 
 .year-tab.active,
@@ -2951,18 +2967,21 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
-  /* GLITCH FIX: Prevent reflow and scroll jumps */
   contain: layout style paint;
-  will-change: auto;
   overflow-anchor: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .carousel {
   display: flex;
   width: 100%;
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-  /* GLITCH FIX: Prevent scroll behavior during transition */
   scroll-behavior: auto;
+  touch-action: none;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
 }
 
 .carousel-slide {
@@ -2973,9 +2992,9 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   display: flex;
   align-items: center;
   justify-content: center;
-  /* GLITCH FIX: Fixed height prevents layout shift */
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .carousel-slide img {
@@ -2985,10 +3004,11 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   object-position: center;
   display: block;
   background: #071124;
-  /* GLITCH FIX: Prevent image loading from causing reflow */
-  aspect-ratio: auto;
-  max-width: 100%;
-  max-height: 100%;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .carousel-nav {
@@ -3008,14 +3028,21 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   align-items: center;
   justify-content: center;
   transition: 0.25s ease;
-  /* GLITCH FIX: Prevent button presses from affecting scroll */
   pointer-events: auto;
   touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .carousel-nav:hover {
   background: #f5a623;
   transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .carousel-nav.prev {
@@ -3038,6 +3065,8 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   font-weight: 700;
   z-index: 40;
   pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .carousel-thumbnails {
@@ -3048,6 +3077,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   margin-top: 24px;
   margin-bottom: 0px;
   padding: 0 14px;
+  box-sizing: border-box;
 }
 
 .thumbnail {
@@ -3064,6 +3094,11 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .thumbnail.active {
@@ -3074,6 +3109,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 
 .thumbnail:hover {
   opacity: 0.9;
+}
+
+.thumbnail:active {
+  transform: scale(0.95);
 }
 
 .thumbnail-number {
@@ -3087,6 +3126,8 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   font-weight: 700;
   background: #17305f;
   pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
@@ -3151,19 +3192,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   }
 }
 
-/* GLITCH FIX: Disable automatic scroll anchoring */
-html {
-  scroll-behavior: auto;
-  overflow-anchor: none;
-}
-
-.carousel,
-.carousel-slide,
-.carousel-slide img {
-  touch-action: manipulation;
-  -webkit-user-drag: none;
-  user-select: none;
-  overscroll-behavior: contain;
+@supports (overflow-anchor: none) {
+  html {
+    overflow-anchor: none;
+  }
 }
 
 </style>
@@ -3173,6 +3205,8 @@ html {
   let currentSlide = 0;
   let currentYear = "2026";
   let isTransitioning = false;
+  let scrollLocked = false;
+  const scrollLockDuration = 100;
 
   const imageData = {
     "2026": [
@@ -3208,6 +3242,24 @@ html {
   const slideTotalCounter = document.getElementById("slideTotalCounter");
   const thumbnails = document.getElementById("thumbnails");
   const yearTabs = document.querySelectorAll(".year-tab");
+  const gallerySection = document.getElementById("campus-gallery");
+
+  // MOBILE FIX: Lock scroll during transitions
+  function lockScroll() {
+    scrollLocked = true;
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = -scrollY + 'px';
+    
+    setTimeout(() => {
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
+      scrollLocked = false;
+    }, scrollLockDuration);
+  }
 
   function renderSlides() {
     carousel.innerHTML = "";
@@ -3219,14 +3271,8 @@ html {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "British Grammar School campus gallery " + currentYear + " image " + (index + 1);
+      img.loading = "lazy";
       
-      // GLITCH FIX: Prevent image load from triggering scroll
-      img.style.display = "block";
-      img.addEventListener("load", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }, true);
-
       slide.appendChild(img);
       carousel.appendChild(slide);
     });
@@ -3238,15 +3284,22 @@ html {
     imageData[currentYear].forEach(function (_, index) {
       const thumb = document.createElement("div");
       thumb.className = "thumbnail" + (index === currentSlide ? " active" : "");
+      thumb.role = "button";
+      thumb.tabindex = "0";
 
       thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
 
-      thumb.addEventListener("click", function () {
-        if (!isTransitioning) {
+      const clickHandler = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!isTransitioning && !scrollLocked) {
           currentSlide = index;
           updateCarousel();
         }
-      });
+      };
+
+      thumb.addEventListener("click", clickHandler);
+      thumb.addEventListener("touchend", clickHandler);
 
       thumbnails.appendChild(thumb);
     });
@@ -3256,9 +3309,7 @@ html {
     if (isTransitioning) return;
     
     isTransitioning = true;
-    
-    // GLITCH FIX: Prevent scroll during transform
-    const scrollY = window.scrollY;
+    lockScroll();
     
     carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
@@ -3269,27 +3320,35 @@ html {
       thumb.classList.toggle("active", index === currentSlide);
     });
 
-    // Prevent scroll jump after transition
     setTimeout(function () {
-      window.scrollTo(0, scrollY);
       isTransitioning = false;
-    }, 10);
+    }, 550);
   }
 
-  function nextSlide() {
-    if (isTransitioning) return;
-    currentSlide = (currentSlide + 1) % imageData[currentYear].length;
-    updateCarousel();
+  function nextSlide(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!isTransitioning && !scrollLocked) {
+      currentSlide = (currentSlide + 1) % imageData[currentYear].length;
+      updateCarousel();
+    }
   }
 
-  function prevSlide() {
-    if (isTransitioning) return;
-    currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
-    updateCarousel();
+  function prevSlide(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!isTransitioning && !scrollLocked) {
+      currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
+      updateCarousel();
+    }
   }
 
   function changeYear(year) {
-    if (isTransitioning) return;
+    if (isTransitioning || scrollLocked) return;
     
     currentYear = year;
     currentSlide = 0;
@@ -3303,28 +3362,50 @@ html {
     updateCarousel();
   }
 
-  // GLITCH FIX: Prevent accidental scrolls
-  nextBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    nextSlide();
-  });
-
-  prevBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    prevSlide();
-  });
+  // Event listeners with both click and touch
+  nextBtn.addEventListener("click", nextSlide);
+  nextBtn.addEventListener("touchend", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+  prevBtn.addEventListener("touchend", prevSlide);
 
   yearTabs.forEach(function (tab) {
-    tab.addEventListener("click", function (e) {
+    const changeYearHandler = function (e) {
       e.preventDefault();
       e.stopPropagation();
       changeYear(tab.dataset.year);
-    });
+    };
+    tab.addEventListener("click", changeYearHandler);
+    tab.addEventListener("touchend", changeYearHandler);
   });
 
-  // GLITCH FIX: Prevent wheel/scroll events from affecting carousel
+  // MOBILE FIX: Prevent unwanted scroll events
+  document.addEventListener("scroll", function () {
+    if (scrollLocked && isTransitioning) {
+      window.scrollTo(0, window.scrollY);
+    }
+  }, { passive: false });
+
+  // MOBILE FIX: Prevent default touch behaviors
+  carousel.addEventListener("touchstart", function (e) {
+    if (isTransitioning) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  carousel.addEventListener("touchmove", function (e) {
+    if (isTransitioning) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  carousel.addEventListener("touchend", function (e) {
+    if (isTransitioning) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { passive: false });
+
+  // MOBILE FIX: Prevent wheel and scroll on carousel
   carousel.addEventListener("wheel", function (e) {
     if (e.deltaY !== 0) {
       e.preventDefault();
