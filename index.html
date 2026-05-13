@@ -2951,18 +2951,13 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
-  /* GLITCH FIX: Prevent reflow and scroll jumps */
-  contain: layout style paint;
-  will-change: auto;
-  overflow-anchor: none;
+
 }
 
 .carousel {
   display: flex;
   width: 100%;
-  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-  /* GLITCH FIX: Prevent scroll behavior during transition */
-  scroll-behavior: auto;
+  transition: transform 0.35s ease;
 }
 
 .carousel-slide {
@@ -3172,7 +3167,6 @@ html {
 (function () {
   let currentSlide = 0;
   let currentYear = "2026";
-  let isTransitioning = false;
 
   const imageData = {
     "2026": [
@@ -3219,13 +3213,8 @@ html {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "British Grammar School campus gallery " + currentYear + " image " + (index + 1);
-      
-      // GLITCH FIX: Prevent image load from triggering scroll
-      img.style.display = "block";
-      img.addEventListener("load", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }, true);
+      img.loading = "lazy";
+      img.draggable = false;
 
       slide.appendChild(img);
       carousel.appendChild(slide);
@@ -3236,16 +3225,14 @@ html {
     thumbnails.innerHTML = "";
 
     imageData[currentYear].forEach(function (_, index) {
-      const thumb = document.createElement("div");
+      const thumb = document.createElement("button");
+      thumb.type = "button";
       thumb.className = "thumbnail" + (index === currentSlide ? " active" : "");
-
-      thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
+      thumb.innerHTML = `<span class="thumbnail-number">${index + 1}</span>`;
 
       thumb.addEventListener("click", function () {
-        if (!isTransitioning) {
-          currentSlide = index;
-          updateCarousel();
-        }
+        currentSlide = index;
+        updateCarousel();
       });
 
       thumbnails.appendChild(thumb);
@@ -3253,13 +3240,7 @@ html {
   }
 
   function updateCarousel() {
-    if (isTransitioning) return;
-    
-    isTransitioning = true;
-    
-    
-    
-    carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
+    carousel.style.transform = "translate3d(-" + currentSlide * 100 + "%, 0, 0)";
 
     slideCounter.textContent = currentSlide + 1;
     slideTotalCounter.textContent = imageData[currentYear].length;
@@ -3267,27 +3248,19 @@ html {
     document.querySelectorAll(".thumbnail").forEach(function (thumb, index) {
       thumb.classList.toggle("active", index === currentSlide);
     });
-
-    setTimeout(function () {
-  isTransitioning = false;
-}, 600);
   }
 
   function nextSlide() {
-    if (isTransitioning) return;
     currentSlide = (currentSlide + 1) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function prevSlide() {
-    if (isTransitioning) return;
     currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function changeYear(year) {
-    if (isTransitioning) return;
-    
     currentYear = year;
     currentSlide = 0;
 
@@ -3300,28 +3273,22 @@ html {
     updateCarousel();
   }
 
-  // GLITCH FIX: Prevent accidental scrolls
   nextBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    e.stopPropagation();
     nextSlide();
   });
 
   prevBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    e.stopPropagation();
     prevSlide();
   });
 
   yearTabs.forEach(function (tab) {
     tab.addEventListener("click", function (e) {
       e.preventDefault();
-      e.stopPropagation();
       changeYear(tab.dataset.year);
     });
   });
-
-  
 
   renderSlides();
   renderThumbnails();
