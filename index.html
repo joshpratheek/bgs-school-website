@@ -1,0 +1,4252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>British Grammar School Secunderabad | SSC School LKG to Class 10</title>
+  <meta name="description" content="British Grammar School, Secunderabad is a trusted SSC school offering quality education from LKG to Class 10 with experienced faculty, holistic development, admissions support and strong academic results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-x: hidden; }
+  </style>
+</head>
+<body>
+<!-- navigation bar-->
+ 
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family:'DM Sans',sans-serif;
+}
+
+body{
+  padding-top:68px;
+}
+
+/* ─────────────────────────
+   NAVBAR
+───────────────────────── */
+
+.navbar{
+  width:100%;
+  background:#0f1e5c;
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99999;
+  border-bottom:2px solid rgba(245,166,35,0.35);
+  box-shadow:0 4px 24px rgba(0,0,0,0.32);
+}
+
+.navbar-inner{
+  width:100%;
+  padding:0 2.5rem;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* ─────────────────────────
+   LOGO
+───────────────────────── */
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  flex-shrink:0;
+}
+
+.nav-logo img{
+  width:46px;
+  height:46px;
+  object-fit:contain;
+  border-radius:6px;
+  border:2px solid rgba(245,166,35,0.4);
+}
+
+.nav-logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+
+.nav-logo-text .school-name{
+  font-size:1rem;
+  font-weight:700;
+  color:#fff;
+}
+
+.nav-logo-text .school-tagline{
+  font-size:0.65rem;
+  font-weight:500;
+  color:#f5a623;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+
+/* ─────────────────────────
+   NAV LINKS
+───────────────────────── */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:0.25rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#c8d4f5;
+  font-weight:500;
+  font-size:0.96rem;
+  padding:0.45rem 0.9rem;
+  border-radius:6px;
+  transition:0.2s ease;
+  white-space:nowrap;
+  position:relative;
+}
+
+.nav-links a:hover{
+  color:#fff;
+  background:rgba(255,255,255,0.07);
+}
+
+/* ─────────────────────────
+   ONE KYND LINK
+───────────────────────── */
+
+.nav-links .one-kynd-btn{
+  color:#c8d4f5 !important;
+  font-weight:500;
+  font-size:0.96rem;
+}
+
+.nav-links .one-kynd-btn:hover{
+  color:#ff4a4a !important;
+  background:rgba(214,58,58,0.08) !important;
+}
+
+.nav-links .one-kynd-btn::after{
+  background:#d63a3a !important;
+}
+
+/* ─────────────────────────
+   APPLY NOW BUTTON
+───────────────────────── */
+
+.nav-links a.cta{
+  background:#f5a623;
+  color:#0f1e5c;
+  font-weight:700;
+  padding:0.45rem 1.2rem;
+  border-radius:999px;
+}
+
+.nav-links a.cta:hover{
+  background:#ffb73c;
+  color:#0f1e5c;
+}
+
+/* ─────────────────────────
+   UNDERLINE EFFECT
+───────────────────────── */
+
+.nav-links a:not(.cta)::after{
+  content:'';
+  position:absolute;
+  left:0.9rem;
+  bottom:4px;
+  width:0;
+  height:2px;
+  background:#f5a623;
+  border-radius:2px;
+  transition:width 0.25s ease;
+}
+
+.nav-links a:not(.cta):hover::after{
+  width:calc(100% - 1.8rem);
+}
+
+/* ─────────────────────────
+   HAMBURGER
+───────────────────────── */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  padding:6px;
+}
+
+.hamburger span{
+  width:24px;
+  height:2.5px;
+  background:#fff;
+  border-radius:2px;
+  transition:0.3s ease;
+}
+
+/* ─────────────────────────
+   MOBILE MENU
+───────────────────────── */
+
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  background:#0d1a52;
+  border-top:1px solid rgba(245,166,35,0.2);
+  padding:1rem 1.5rem 1.5rem;
+  gap:0.25rem;
+}
+
+.mobile-menu.active{
+  display:flex;
+}
+
+.mobile-menu a{
+  text-decoration:none;
+  color:#c8d4f5;
+  font-weight:500;
+  font-size:0.95rem;
+  padding:0.75rem 1rem;
+  border-radius:8px;
+  transition:0.2s ease;
+}
+
+/* ─────────────────────────
+   MOBILE ONE KYND
+───────────────────────── */
+
+.mobile-menu .one-kynd-btn-mobile{
+  color:#c8d4f5 !important;
+  font-weight:500;
+}
+
+.mobile-menu .one-kynd-btn-mobile:hover{
+  color:#ff5b5b !important;
+  background:rgba(214,58,58,0.08) !important;
+}
+
+/* ─────────────────────────
+   MOBILE APPLY BUTTON
+───────────────────────── */
+
+.mobile-menu a.cta{
+  margin-top:0.5rem;
+  background:#f5a623;
+  color:#0f1e5c;
+  font-weight:700;
+  text-align:center;
+  border-radius:999px;
+}
+
+/* ─────────────────────────
+   RESPONSIVE
+───────────────────────── */
+
+@media (max-width:860px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .navbar-inner{
+    padding:0 1.5rem;
+  }
+
+}
+
+@media (max-width:400px){
+
+  .nav-logo-text .school-name{
+    font-size:0.85rem;
+  }
+
+  .nav-logo img{
+    width:38px;
+    height:38px;
+  }
+
+}
+
+</style>
+<nav class="navbar" id="navbar">
+
+  <div class="navbar-inner">
+
+    <!-- LOGO -->
+
+    <a href="#home" class="nav-logo">
+
+      <img src="images/logo.jpeg" alt="BGS Logo">
+
+      <div class="nav-logo-text">
+        <span class="school-name">British Grammar School</span>
+        <span class="school-tagline">EST. 2010 · SECUNDERABAD</span>
+      </div>
+
+    </a>
+
+    <!-- DESKTOP LINKS -->
+
+    <div class="nav-links">
+
+      <a href="#home">Home</a>
+
+      <a href="#about">About</a>
+
+      <a href="#why-choose-us">Why BGS</a>
+
+      <a href="onekynd.html" class="one-kynd-btn">
+        One Kynd
+      </a>
+
+      <a href="#contact-us">Contact</a>
+
+      <a href="#admission-form" class="cta">
+        Apply Now
+      </a>
+
+    </div>
+
+    <!-- HAMBURGER -->
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#why-choose-us">Why BGS</a>
+
+    <a href="onekynd.html" class="one-kynd-btn-mobile">
+      One Kynd
+    </a>
+
+    <a href="#contact-us">Contact</a>
+
+    <a href="#admission-form" class="cta">
+      Apply Now
+    </a>
+
+  </div>
+
+</nav>
+
+<script>
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const navbar = document.getElementById('navbar');
+
+function closeMenu() {
+  mobileMenu.classList.remove('active');
+}
+
+hamburger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  mobileMenu.classList.toggle('active');
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('click', function(e) {
+  if (!navbar.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+</script>
+
+<!--HERO-->
+
+<div id="home">
+<div class="bgs-hero-slider" id="bgsHeroSlider">
+    <div class="bgs-slides-track" id="bgsSlidesTrack">
+
+        <!-- SLIDE 1: SSC Curriculum -->
+        <div class="bgs-slide bgs-slide-1">
+            <div class="bgs-inner bgs-z-default">
+                <div class="bgs-text">
+                    <div class="bgs-badge">SSC Curriculum &middot; LKG to Class 10 &middot; Secunderabad</div>
+                    <h1>Top-Rated <span>SSC School</span><br>in Secunderabad</h1>
+                    <p>British Grammar School is one of Secunderabad's most trusted SSC schools, offering high-quality, value-based education from LKG to Class 10. Our Telangana SSC board-aligned curriculum builds strong academic foundations while developing critical thinking, creativity, and character in every child.</p>
+                    <p>With experienced teachers, smart classrooms, and a proven track record of 100% SSC board pass results, we prepare every student for academic success and a confident future.</p>
+                    <div class="bgs-highlights">
+                        <span>Telangana SSC Board</span>
+                        <span>LKG to Class 10</span>
+                        <span>100% Pass Results 2026</span>
+                        <span>Est. Since 2010</span>
+                        <span>Secunderabad, Telangana</span>
+                        <span>Experienced Faculty</span>
+                    </div>
+                    <a href="#admission-form" class="bgs-btn">Apply for Admission 2026-27</a>
+                </div>
+                <div class="bgs-media">
+                    <div class="bgs-curr-grid">
+                        <div class="bgs-curr-card bgs-full"><div class="bgs-icon">&#127891;</div><h3>Telangana SSC Board Curriculum</h3><p>Fully Aligned &middot; Board Exam Ready</p></div>
+                        <div class="bgs-curr-card"><div class="bgs-icon">&#128300;</div><h3>Science &amp; Maths</h3><p>Conceptual &amp; Practical Learning</p></div>
+                        <div class="bgs-curr-card"><div class="bgs-icon">&#128214;</div><h3>Languages</h3><p>English &middot; Telugu &middot; Hindi</p></div>
+                        <div class="bgs-curr-card"><div class="bgs-icon">&#127941;</div><h3>Co-Curricular</h3><p>Sports &middot; Arts &middot; Leadership</p></div>
+                        <div class="bgs-curr-card"><div class="bgs-icon">&#128161;</div><h3>Smart Classrooms</h3><p>Technology-Enabled Learning</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Toppers -->
+        <div class="bgs-slide bgs-slide-2">
+            <div class="bgs-inner bgs-z-default">
+                <div class="bgs-text">
+                    <div class="bgs-badge">SSC Board Results 2026</div>
+                    <h1>Our Star<br><span>Toppers</span></h1>
+                    <div class="bgs-ssc-tag">100% Pass Result &middot; SSC Exams 2026</div>
+                    <p>British Grammar School, Secunderabad proudly celebrates its Class 10 SSC board toppers. Their exceptional results reflect our school's consistent commitment to academic excellence, highly qualified faculty, rigorous exam preparation, and a nurturing learning environment that brings out the best in every student.</p>
+                    <p>Heartfelt congratulations to all our students and parents!</p>
+                </div>
+                <div class="bgs-media">
+                    <div class="bgs-podium">
+                        <div class="bgs-topper bgs-silver">
+                            <div class="bgs-rank">2</div>
+                            <img class="bgs-photo" src="images/ganesh.jpeg" alt="Gyanmote Sri Ganesh" onerror="this.src='https://placehold.co/300x300/f5a623/ffffff?text=Sri+Ganesh'" />
+                            <h3>Gyanmote Sri Ganesh</h3>
+                            <h4>81%</h4>
+                            <p>Roll No: 2622158118 &middot; Class 10</p>
+                        </div>
+                        <div class="bgs-topper bgs-gold">
+                            <div class="bgs-rank">1</div>
+                            <img class="bgs-photo" src="images/khaneeshka.jpeg" alt="Pomba Khaneeshka" onerror="this.src='https://placehold.co/350x350/f5a623/ffffff?text=Topper+Girl'" />
+                            <h3>Pomba Khaneeshka</h3>
+                            <h4>90%</h4>
+                            <p>Roll No: 2622158041 &middot; Class 10</p>
+                        </div>
+                        <div class="bgs-topper bgs-bronze">
+                            <div class="bgs-rank">3</div>
+                            <img class="bgs-photo" src="images/yashwanth.jpeg" alt="Sura Yashwanth Sai" onerror="this.src='https://placehold.co/300x300/c49a6c/ffffff?text=Yashwanth+Sai'" />
+                            <h3>Sura Yashwanth Sai</h3>
+                            <h4>80%</h4>
+                            <p>Roll No: 2622158446 &middot; Class 10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Legacy / Stats -->
+        <div class="bgs-slide bgs-slide-3">
+            <div class="bgs-inner bgs-z-reverse">
+                <div class="bgs-media">
+                    <div class="bgs-stats-grid">
+                        <div class="bgs-stat"><div class="bgs-stat-num">15+</div><div class="bgs-stat-lbl">Years</div><div class="bgs-stat-sub">Established Since 2010</div></div>
+                        <div class="bgs-stat"><div class="bgs-stat-num">1000+</div><div class="bgs-stat-lbl">Students</div><div class="bgs-stat-sub">Successful Learners &amp; Alumni</div></div>
+                        <div class="bgs-stat"><div class="bgs-stat-num">50+</div><div class="bgs-stat-lbl">Teachers</div><div class="bgs-stat-sub">Qualified &amp; Dedicated Educators</div></div>
+                        <div class="bgs-stat"><div class="bgs-stat-num">100%</div><div class="bgs-stat-lbl">Results</div><div class="bgs-stat-sub">SSC Board Pass Rate Since 2010</div></div>
+                    </div>
+                </div>
+                <div class="bgs-text">
+                    <div class="bgs-badge">Our Legacy &middot; British Grammar School &middot; Est. 2010</div>
+                    <h1>15 Years of <span>Shaping Futures</span></h1>
+                    <p>Established in 2010, British Grammar School, Secunderabad has been a cornerstone of quality SSC education in Telangana for over 15 years. From our first batch to thousands of successful alumni, we have built an enduring reputation for academic rigour, compassionate teaching, and holistic student development.</p>
+                    <p>Our consistent 100% SSC board pass results, highly qualified faculty, modern smart classrooms, and strong community values make us one of the most trusted schools in Secunderabad.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Montessori -->
+        <div class="bgs-slide bgs-slide-4">
+            <div class="bgs-inner bgs-z-default">
+                <div class="bgs-text">
+                    <div class="bgs-badge bgs-badge-mont">One Kynd Montessori &middot; LKG &amp; UKG &middot; Hyderabad</div>
+                    <h1>Where Little Minds<br><span>Begin to Bloom</span></h1>
+                    <div class="bgs-mont-rule"></div>
+                    <p><strong>One Kynd Montessori, Hyderabad</strong> is a thoughtfully designed pre-primary programme giving children the strongest possible start to their lifelong learning journey. We blend internationally inspired Montessori principles with structured early childhood education to develop cognitive, emotional, creative, and social skills from day one.</p>
+                    <p>Children in our <strong>LKG and UKG classes</strong> thrive in a warm, safe, stimulating environment guided by trained early childhood educators &mdash; building curiosity, independence, and a deep love for learning.</p>
+                    <div class="bgs-pills">
+    <span>Phonics • Creativity • Early Learning • Montessori Play</span>
+</div>
+
+<a href="#about" class="bgs-btn bgs-mont-btn">Learn More</a>
+                </div>
+                <div class="bgs-media bgs-mont-images">
+                    <div class="bgs-mont-img bgs-mont-wide" style="background-image:url('https://placehold.co/700x280/f5e4de/e53935?text=Montessori+Classroom');"></div>
+                    <div class="bgs-mont-img" style="background-image:url('https://placehold.co/400x250/f5e4de/e53935?text=Creative+Play');"></div>
+                    <div class="bgs-mont-img" style="background-image:url('https://placehold.co/400x250/f5e4de/e53935?text=Early+Learning');"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="bgs-arrow bgs-prev" id="bgsPrevBtn" aria-label="Previous slide">&#8592;</button>
+    <button class="bgs-arrow bgs-next" id="bgsNextBtn" aria-label="Next slide">&#8594;</button>
+
+    <div class="bgs-dots">
+        <button class="bgs-dot bgs-dot-active" data-index="0" aria-label="Slide 1"></button>
+        <button class="bgs-dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="bgs-dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="bgs-dot" data-index="3" aria-label="Slide 4"></button>
+    </div>
+</div>
+
+<style>
+/* ============================================================
+   BGS HERO SLIDER — WordPress-safe, prefixed classes
+   No special Unicode in CSS. No PHP-conflicting characters.
+   All arrow characters use HTML entities in markup.
+============================================================ */
+
+/* Reset scoped to our component only */
+.bgs-hero-slider *,
+.bgs-hero-slider *::before,
+.bgs-hero-slider *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Shell */
+.bgs-hero-slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Track — slides sit side by side in this flex row */
+.bgs-slides-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: transform;
+}
+
+/* Every slide — IDENTICAL padding so left text edge never moves */
+.bgs-slide {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/* Inner layout container */
+.bgs-inner {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Z-pattern direction */
+.bgs-z-default { flex-direction: row; }
+.bgs-z-reverse  { flex-direction: row-reverse; }
+
+/* Text column — flex-start pins left edge at the slide padding */
+.bgs-text {
+    flex: 1 1 48%;
+    min-width: 0;
+}
+
+/* Media column */
+.bgs-media {
+    flex: 1 1 48%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================================
+   UNIFIED TYPOGRAPHY
+   All 4 slides share these rules exactly. No overrides.
+============================================================ */
+
+.bgs-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    margin-bottom: 1.2rem;
+}
+
+/* Same h1 on every slide — size, weight, line-height, spacing */
+.bgs-slide h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4.2vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.03em;
+}
+
+/* Same p on every slide */
+.bgs-slide p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
+    font-weight: 400;
+    max-width: 560px;
+}
+
+/* Small text inside cards should not inherit the 560px max-width */
+.bgs-topper p,
+.bgs-curr-card p,
+.bgs-stat-sub {
+    max-width: none;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ============================================================
+   SLIDE 1 — Blue SSC
+============================================================ */
+.bgs-slide-1 {
+    background-color: #0a1540;
+    background-image:
+        radial-gradient(circle at 5% 50%, rgba(245,166,35,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 95% 50%, rgba(245,166,35,0.07) 0%, transparent 50%);
+}
+.bgs-slide-1 .bgs-badge,
+.bgs-slide-2 .bgs-badge,
+.bgs-slide-3 .bgs-badge {
+    background: rgba(245,166,35,0.18);
+    color: #ffd896;
+    border: 1px solid rgba(245,166,35,0.4);
+}
+.bgs-slide-1 h1,
+.bgs-slide-2 h1,
+.bgs-slide-3 h1 { color: #ffffff; }
+
+.bgs-slide-1 h1 span,
+.bgs-slide-2 h1 span,
+.bgs-slide-3 h1 span { color: #f5a623; }
+
+.bgs-slide-1 p,
+.bgs-slide-2 p,
+.bgs-slide-3 p { color: #c8d4f5; }
+
+.bgs-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.8rem 0 1.5rem;
+}
+.bgs-highlights span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #dce5ff;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.bgs-btn {
+    display: inline-block;
+    background: #f5a623;
+    color: #0f1e5c;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 48px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.bgs-btn:hover { opacity: 0.88; }
+
+.bgs-mont-btn {
+    background: #e53935;
+    color: #ffffff;
+    margin-top: 1.4rem;
+}
+
+.bgs-mont-btn:hover {
+    background: #cc2f2b;
+    opacity: 1;
+}
+
+/* Curriculum grid */
+.bgs-curr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    width: 100%;
+}
+.bgs-curr-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 1rem 0.8rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.bgs-curr-card:hover { transform: translateY(-3px); }
+.bgs-curr-card.bgs-full {
+    grid-column: span 2;
+    background: rgba(245,166,35,0.1);
+    border-color: rgba(245,166,35,0.3);
+}
+.bgs-curr-card .bgs-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+.bgs-curr-card h3 { color: #ffffff; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
+
+/* ============================================================
+   SLIDE 2 — Toppers
+============================================================ */
+.bgs-slide-2 {
+    background: linear-gradient(160deg, #0a1540 0%, #0f1e5c 50%, #1a2a70 100%);
+}
+.bgs-ssc-tag {
+    display: inline-block;
+    background: #f5a623;
+    color: #0f1e5c;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.25rem 1rem;
+    border-radius: 40px;
+    margin-bottom: 0.8rem;
+}
+
+/* Podium — aligns bottom so gold card lifts above */
+.bgs-podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+.bgs-topper {
+    border-radius: 24px;
+    padding: 2rem 0.8rem 1.4rem;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    max-width: 160px;
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.2s;
+}
+.bgs-gold {
+    background: linear-gradient(145deg, rgba(245,166,35,0.2), rgba(245,166,35,0.05));
+    border: 2px solid rgba(245,166,35,0.6);
+    transform: translateY(-8px);
+}
+.bgs-silver { border: 1px solid rgba(192,192,192,0.4); }
+.bgs-bronze { border: 1px solid rgba(205,127,50,0.4); }
+
+.bgs-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center top;
+    margin: 0 auto 0.7rem;
+    border-radius: 50%;
+    border: 3px solid #f5a623;
+    display: block;
+}
+.bgs-gold .bgs-photo { width: 115px; height: 115px; }
+
+.bgs-rank {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #f5a623;
+    color: #0f1e5c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+}
+.bgs-topper h3 { color: #ffffff; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
+.bgs-topper h4 { color: #f5a623; font-size: 1.5rem; font-weight: 800; margin: 0.2rem 0; }
+
+/* ============================================================
+   SLIDE 3 — Legacy
+============================================================ */
+.bgs-slide-3 { background: #0a1540; }
+
+.bgs-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+.bgs-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+.bgs-stat-num {
+    font-family: 'Playfair Display', serif;
+    color: #f5a623;
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+.bgs-stat-lbl {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+}
+.bgs-stat-sub {
+    color: rgba(143,164,216,0.7);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    margin-top: 0.2rem;
+}
+
+/* ============================================================
+   SLIDE 4 — Montessori
+============================================================ */
+.bgs-slide-4 {
+    background: linear-gradient(135deg, #fff1ee 0%, #fff7f5 45%, #ffe8e3 100%);
+}
+.bgs-badge-mont {
+    background: rgba(229,57,53,0.09);
+    border: 1px solid rgba(229,57,53,0.18);
+    color: #c84b41;
+}
+.bgs-slide-4 h1       { color: #7d1f1f; }
+.bgs-slide-4 h1 span  { color: #e53935; font-style: normal; }
+.bgs-slide-4 p        { color: #5c4a4a; }
+.bgs-slide-4 strong   { color: #a12d2d; }
+
+.bgs-mont-rule {
+    width: 44px;
+    height: 4px;
+    background: #e53935;
+    border-radius: 999px;
+    margin: 0.6rem 0 0.9rem;
+}
+.bgs-mont-affil {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #8a5a52;
+    background: rgba(229,57,53,0.06);
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.bgs-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+}
+.bgs-pills span {
+    background: #e53935;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+}
+
+/* Montessori image grid */
+.bgs-mont-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    width: 100%;
+    align-items: start;
+}
+.bgs-mont-img {
+    border-radius: 16px;
+    background-color: #fff8f6;
+    border: 2px dashed rgba(229,57,53,0.22);
+    min-height: 140px;
+    background-size: cover;
+    background-position: center;
+}
+.bgs-mont-wide {
+    grid-column: span 2;
+    min-height: 160px;
+}
+
+/* ============================================================
+   NAVIGATION DOTS + ARROWS
+============================================================ */
+.bgs-dots {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+.bgs-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    padding: 0;
+}
+.bgs-dot-active {
+    background: #f5a623;
+    width: 24px;
+    border-radius: 10px;
+}
+
+.bgs-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 20;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s;
+    line-height: 1;
+}
+.bgs-arrow:hover { background: rgba(0,0,0,0.55); }
+.bgs-prev { left: 20px; }
+.bgs-next { right: 20px; }
+
+/* ============================================================
+   RESPONSIVE — Tablet
+============================================================ */
+@media (max-width: 960px) {
+    .bgs-slide {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    .bgs-inner,
+    .bgs-z-default,
+    .bgs-z-reverse {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 3.5rem;
+    }
+    .bgs-text,
+    .bgs-media {
+        width: 100%;
+        flex: none;
+    }
+    .bgs-podium { justify-content: center; }
+    .bgs-stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile
+============================================================ */
+@media (max-width: 640px) {
+    .bgs-slide {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        min-height: auto;
+    }
+   .bgs-inner {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.bgs-text {
+    text-align: left;
+}
+
+.bgs-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    .bgs-slide h1 { font-size: 2rem; }
+    .bgs-podium { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .bgs-topper { max-width: 140px; }
+    .bgs-stats-grid { grid-template-columns: 1fr 1fr; }
+    .bgs-mont-images { grid-template-columns: 1fr; }
+    .bgs-mont-wide { grid-column: span 1; }
+    .bgs-curr-grid { grid-template-columns: 1fr; }
+    .bgs-curr-card.bgs-full { grid-column: span 1; }
+    .bgs-arrow { width: 36px; height: 36px; font-size: 1rem; }
+    .bgs-prev { left: 10px; }
+    .bgs-next { right: 10px; }
+}
+</style>
+
+<script>
+(function() {
+    var track   = document.getElementById('bgsSlidesTrack');
+    var slider  = document.getElementById('bgsHeroSlider');
+    var prevBtn = document.getElementById('bgsPrevBtn');
+    var nextBtn = document.getElementById('bgsNextBtn');
+    var dots    = slider.querySelectorAll('.bgs-dot');
+
+    var total = 4;
+    var current = 0;
+    var autoTimer = null;
+    var userInteracted = false;
+    var restartTimeout = null;
+
+    function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) {
+            if (i === current) {
+                d.classList.add('bgs-dot-active');
+            } else {
+                d.classList.remove('bgs-dot-active');
+            }
+        });
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() {
+        if (autoTimer) clearInterval(autoTimer);
+        if (!userInteracted) {
+            autoTimer = setInterval(next, 5500);
+        }
+    }
+
+    function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+
+    function handleInteraction() {
+        userInteracted = true;
+        stopAuto();
+        if (restartTimeout) clearTimeout(restartTimeout);
+        restartTimeout = setTimeout(function() {
+            userInteracted = false;
+            startAuto();
+        }, 8000);
+    }
+
+    /* Click / hold detection */
+    var holdTimer = null;
+    function startHold() { holdTimer = setTimeout(handleInteraction, 100); }
+    function endHold()   { if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; } }
+
+    slider.addEventListener('mousedown',  startHold);
+    slider.addEventListener('mouseup',    endHold);
+    slider.addEventListener('mouseleave', function() { endHold(); if (!userInteracted) startAuto(); });
+    slider.addEventListener('touchstart', startHold, { passive: true });
+    slider.addEventListener('touchend',   endHold);
+    slider.addEventListener('touchcancel',endHold);
+
+    nextBtn.addEventListener('click', function() { next(); handleInteraction(); startAuto(); });
+    prevBtn.addEventListener('click', function() { prev(); handleInteraction(); startAuto(); });
+
+    dots.forEach(function(d) {
+        d.addEventListener('click', function() {
+            goTo(parseInt(this.getAttribute('data-index'), 10));
+            handleInteraction();
+            startAuto();
+        });
+    });
+
+    /* Pause on any card/link click */
+    var clickables = slider.querySelectorAll('a, .bgs-curr-card, .bgs-topper, .bgs-stat, .bgs-mont-img');
+    clickables.forEach(function(el) {
+        el.addEventListener('click', handleInteraction);
+        el.addEventListener('touchstart', handleInteraction);
+    });
+
+    /* Swipe support */
+    var touchStartX = 0;
+    slider.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    slider.addEventListener('touchend', function(e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) { next(); } else { prev(); }
+            handleInteraction();
+            startAuto();
+        }
+    }, { passive: true });
+
+    startAuto();
+})();
+</script>
+
+
+<!-- FOUNDER MESSAGE -->
+
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f5f0e8;
+      overflow-x: hidden;
+    }
+
+    .msg-section {
+      width: 100%;
+      background: #f5f0e8;
+      padding: 4rem 5rem;
+    }
+
+    .msg-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .msg-img-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .msg-img-wrap {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ddd8cc;
+      border: 1.5px solid rgba(26,48,128,0.15);
+      position: relative;
+    }
+
+    .msg-img-wrap img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+
+    .msg-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #7a7060;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .msg-heading {
+      font-family: 'Playfair Display', serif;
+      color: #1a3080;
+      font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 0.45rem;
+    }
+
+    .msg-heading .gold {
+      color: #c8922a;
+    }
+
+    .msg-rule {
+      width: 42px;
+      height: 3px;
+      background: #c8922a;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .msg-body {
+      color: #3a3a3a;
+      font-size: 0.88rem;
+      line-height: 1.85;
+      text-align: justify;
+      margin-bottom: 1.8rem;
+    }
+
+    .msg-body p {
+      margin-bottom: 0.85rem;
+    }
+
+    .msg-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .msg-body strong {
+      color: #1a3080;
+      font-weight: 700;
+    }
+
+    .msg-signature {
+      padding-top: 0.2rem;
+    }
+
+    .msg-name {
+      font-family: 'Playfair Display', serif;
+      color: #1a3080;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .msg-title-line1 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #c8922a;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.1rem;
+    }
+
+    .msg-title-line2 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #5a5a6a;
+    }
+
+    @media (max-width: 900px) {
+      .msg-section {
+        padding: 3rem 1.5rem;
+      }
+
+      .msg-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .msg-section {
+        padding: 2.2rem 1rem;
+      }
+
+      .msg-heading {
+        font-size: 1.9rem;
+        line-height: 1.12;
+      }
+
+      .msg-body {
+        font-size: 0.92rem;
+        line-height: 1.8;
+      }
+
+      .msg-name {
+        font-size: 1.05rem;
+      }
+
+      .msg-title-line1,
+      .msg-title-line2 {
+        font-size: 0.8rem;
+      }
+
+      .msg-img-wrap {
+        border-radius: 10px;
+      }
+    }
+  </style>
+<section class="msg-section" id="chairman-message" aria-label="Message from Dr. Khadar Khan, Chairman and Founder of British Grammar School Secunderabad">
+  <div class="msg-inner">
+
+    <div class="msg-img-col">
+
+      <div class="msg-img-wrap">
+        <img src="images/founder.jpeg" alt="Dr. Khadar Khan, Chairman and Founder of British Grammar School Secunderabad">
+      </div>
+
+      <div class="msg-signature">
+        <div class="msg-name">Dr. Khadar Khan</div>
+        <div class="msg-title-line1">Guinness World Record Holder</div>
+        <div class="msg-title-line2">Chairman &amp; Founder, British Grammar School</div>
+      </div>
+
+    </div>
+
+    <div class="msg-text">
+
+      <p class="msg-eyebrow">A Message from Our Chairman &amp; Founder</p>
+
+      <h2 class="msg-heading">
+        A Message from Our<br>
+        <span class="gold">Chairman &amp; Founder</span>
+      </h2>
+
+      <div class="msg-rule"></div>
+
+      <div class="msg-body">
+        <p>
+          A school plays a central role in nurturing the unique talents of every child while shaping their character, confidence, and aspirations. At <strong>British Grammar School, Secunderabad</strong>, we are guided by a foundational philosophy of creating a joyful, inclusive, and future-ready learning environment.
+        </p>
+
+        <p>
+          Through innovative teaching and student-centred learning, we cultivate <strong>critical thinking, creativity, collaboration, and communication</strong> — the four pillars that prepare every student from <strong>LKG to Class 10</strong> for lifelong success in an ever-evolving world.
+        </p>
+
+        <p>
+          Our commitment goes beyond academics. The holistic development and well-being of every student remain at the heart of everything we do at <strong>British Grammar School</strong>. We strive to identify each child's strengths early and transform their talents into meaningful passions. We warmly invite families to be part of our journey in shaping tomorrow's compassionate, confident leaders.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- VISION, MISSION & CORE VALUES -->
+
+<style>
+.vm-section,
+.vm-section *,
+.cv-section,
+.cv-section * {
+  box-sizing: border-box;
+}
+
+.vm-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 72px 0 52px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.vm-inner,
+.cv-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vm-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.vm-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: #1a3080;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.vm-ornament,
+.cv-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vm-ornament {
+  margin-bottom: 16px;
+}
+
+.vm-ornament-line {
+  width: 58px;
+  height: 1.5px;
+  background: #f5a623;
+  border-radius: 999px;
+}
+
+.vm-ornament svg {
+  width: 18px;
+  height: 18px;
+  stroke: #f5a623;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.vm-header p {
+  color: #40537c;
+  font-size: 15.5px;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.vm-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.vm-card {
+  border-radius: 20px;
+  padding-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-card-dark {
+  background: linear-gradient(150deg, #1e3a8a 0%, #0f2260 100%);
+}
+
+.vm-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(26,48,128,0.14);
+  box-shadow: 0 8px 36px rgba(7,31,107,0.09);
+}
+
+.vm-icon-outer {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  margin-bottom: 6px;
+}
+
+.vm-card-icon {
+  width: 68px;
+  height: 68px;
+  background: #f5a623;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(245,166,35,0.42);
+}
+
+.vm-card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 1.9;
+}
+
+.vm-card-body {
+  padding: 18px 32px 0;
+}
+
+.vm-card-tag {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f5a623;
+  margin-bottom: 14px;
+}
+
+.vm-card h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.38rem;
+  font-weight: 400;
+  line-height: 1.38;
+  margin-bottom: 14px;
+}
+
+.vm-card-dark h2 {
+  color: #ffffff;
+}
+
+.vm-card-light h2 {
+  color: #1a3080;
+}
+
+.vm-card-rule {
+  width: 36px;
+  height: 3px;
+  background: #f5a623;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.vm-card p {
+  font-size: 13.5px;
+  line-height: 1.82;
+}
+
+.vm-card-dark p {
+  color: rgba(255,255,255,0.82);
+}
+
+.vm-card-light p {
+  color: #40537c;
+}
+
+.vm-watermark {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.vm-watermark svg {
+  width: 90px;
+  height: 90px;
+  fill: none;
+  stroke-width: 0.8;
+}
+
+.vm-card-dark .vm-watermark svg {
+  stroke: #ffffff;
+}
+
+.vm-card-light .vm-watermark svg {
+  stroke: #1a3080;
+}
+
+.cv-section {
+  width: 100%;
+  background: linear-gradient(135deg, #f7faff 0%, #fff8ec 100%);
+  padding: 52px 0 56px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.cv-pill {
+  display: inline-block;
+  color: #f5a623;
+  background: #1a3080;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 5px 16px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cv-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: #1a3080;
+  margin-bottom: 10px;
+}
+
+.cv-ornament {
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cv-ornament-line {
+  width: 32px;
+  height: 1px;
+  background: #f5a623;
+}
+
+.cv-ornament svg {
+  width: 13px;
+  height: 13px;
+  stroke: #f5a623;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.cv-header p {
+  color: #40537c;
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.cv-cards {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.cv-card {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 16px;
+  padding: 20px 14px 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(7,31,107,0.08);
+}
+
+.cv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: #f5a623;
+  border-radius: 0 0 999px 999px;
+}
+
+.cv-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(26,48,128,0.11);
+}
+
+.cv-card-dark {
+  background: linear-gradient(145deg, #1a3080, #0f2260);
+}
+
+.cv-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26,48,128,0.18);
+  background: #f7faff;
+  margin: 0 auto 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cv-card-dark .cv-icon {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(245,166,35,0.45);
+}
+
+.cv-icon-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f5a623;
+  border-radius: 50%;
+  top: 2px;
+  right: 2px;
+  border: 1.5px solid #fff;
+}
+
+.cv-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.cv-card-light .cv-icon svg {
+  stroke: #1a3080;
+}
+
+.cv-card-dark .cv-icon svg {
+  stroke: #f5a623;
+}
+
+.cv-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.cv-card-light h3 {
+  color: #1a3080;
+}
+
+.cv-card-dark h3 {
+  color: #ffffff;
+}
+
+.cv-rule {
+  width: 24px;
+  height: 2px;
+  background: #f5a623;
+  border-radius: 999px;
+  margin: 0 auto 9px;
+}
+
+.cv-card p {
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.cv-card-light p {
+  color: #40537c;
+}
+
+.cv-card-dark p {
+  color: rgba(255,255,255,0.78);
+}
+
+@media (max-width: 900px) {
+  .vm-inner,
+  .cv-inner {
+    padding: 0 24px;
+  }
+
+  .vm-cards {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+
+  .cv-cards {
+    flex-wrap: wrap;
+  }
+
+  .cv-card {
+    flex: 0 0 calc(33.33% - 8px);
+  }
+}
+
+@media (max-width: 640px) {
+  .vm-section {
+    padding: 52px 0 36px;
+  }
+
+  .cv-card {
+    flex: 0 0 calc(50% - 6px);
+  }
+}
+
+@media (max-width: 420px) {
+  .cv-card {
+    flex: 0 0 100%;
+  }
+}
+
+
+</style>
+
+<section class="vm-section" id="vision-mission" aria-labelledby="vm-heading">
+
+    <div class="vm-inner">
+
+      <header class="vm-header">
+        <h1 id="vm-heading">Vision &amp; Mission</h1>
+
+        <div class="vm-ornament" aria-hidden="true">
+          <div class="vm-ornament-line"></div>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>
+          <div class="vm-ornament-line"></div>
+        </div>
+
+        <p>
+          Guided by a clear vision and driven by a strong mission, we nurture every child at
+          British Grammar School, Secunderabad to reach their fullest potential and achieve more.
+        </p>
+      </header>
+
+      <div class="vm-cards">
+
+        <!-- Vision Card -->
+        <article class="vm-card vm-card-dark" aria-label="Our Vision">
+          <div class="vm-icon-outer">
+            <div class="vm-card-icon" aria-hidden="true">
+              <!-- Radiant eye / vision icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5z"/>
+                <circle cx="12" cy="12" r="2.5"/>
+                <path d="M12 2v1.5M12 20.5V22M4.22 4.22l1.06 1.06M18.72 18.72l1.06 1.06M2 12h1.5M20.5 12H22M4.22 19.78l1.06-1.06M18.72 5.28l1.06-1.06"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="vm-card-body">
+            <p class="vm-card-tag">Our Vision</p>
+            <h2>Unlocking boundless possibilities for every student at BGS</h2>
+            <div class="vm-card-rule"></div>
+            <p>
+              At British Grammar School, Secunderabad, we envision empowering every student to
+              unlock boundless possibilities through quality SSC education, academic excellence,
+              and holistic development. We are committed to creating a nurturing learning
+              environment where students are encouraged to explore, innovate, and excel while
+              building confidence, strong character, creativity, and global awareness. Through
+              experienced faculty, modern teaching methods, and value-based education, we inspire
+              young minds from LKG to Class 10 to become confident learners, responsible citizens,
+              and future leaders prepared for lifelong success.
+            </p>
+          </div>
+
+          <div class="vm-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Mission Card -->
+        <article class="vm-card vm-card-light" aria-label="Our Mission">
+          <div class="vm-icon-outer">
+            <div class="vm-card-icon" aria-hidden="true">
+              <!-- Growth chart / mission icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M3 17l4-8 4 4 4-6 4 10"/>
+                <path d="M3 21h18"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="vm-card-body">
+            <p class="vm-card-tag">Our Mission</p>
+            <h2>Holistic education that develops curiosity, thinking and compassionate leadership</h2>
+            <div class="vm-card-rule"></div>
+            <p>
+              Our mission at British Grammar School, Secunderabad, is to provide holistic,
+              student-centred SSC education that nurtures intellectual curiosity, critical thinking,
+              creativity, and compassionate leadership. Through innovative teaching methods,
+              experienced faculty, and a safe and nurturing learning environment, we empower
+              students from LKG to Class 10 to build strong academic foundations, develop
+              confidence, strengthen character, and cultivate essential life skills. We encourage
+              problem-solving, resilience, communication, and a lifelong love of learning —
+              preparing every child for academic excellence, future success, and responsible
+              global citizenship.
+            </p>
+          </div>
+
+          <div class="vm-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 17l4-8 4 4 4-6 4 10"/>
+              <path d="M3 21h18"/>
+            </svg>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CORE VALUES ═════════════════════════════════════════════ -->
+  <section class="cv-section" id="core-values" aria-labelledby="cv-heading">
+
+    <div class="cv-inner">
+
+      <header class="cv-header">
+        <span class="cv-pill">What We Stand For</span>
+        <h2 id="cv-heading">Our Core Values</h2>
+        <div class="cv-ornament" aria-hidden="true">
+          <div class="cv-ornament-line"></div>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3L4 7v5c0 4.418 3.582 8.535 8 9.93C17.418 20.535 21 16.418 21 12V7l-9-4z"/>
+          </svg>
+          <div class="cv-ornament-line"></div>
+        </div>
+        <p>Five guiding principles that shape every learning experience, relationship and decision at British Grammar School, Secunderabad.</p>
+      </header>
+
+      <div class="cv-cards" role="list">
+
+        <!-- Innovation -->
+        <article class="cv-card cv-card-dark" role="listitem" aria-label="Core Value: Innovation">
+          <div class="cv-icon" aria-hidden="true">
+            <span class="cv-icon-dot"></span>
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12.9V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.1A7 7 0 0 1 12 2z"/>
+            </svg>
+          </div>
+          <h3>Innovation</h3>
+          <div class="cv-rule"></div>
+          <p>Developing innovative ideas and putting them into practice — pioneering concept-based, non-rote learning for every student.</p>
+        </article>
+
+        <!-- Creativity -->
+        <article class="cv-card cv-card-light" role="listitem" aria-label="Core Value: Creativity">
+          <div class="cv-icon" aria-hidden="true">
+            <span class="cv-icon-dot"></span>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
+          <h3>Creativity</h3>
+          <div class="cv-rule"></div>
+          <p>Fostering an environment that respects and promotes creativity, encouraging every child to express and explore freely.</p>
+        </article>
+
+        <!-- Empathy -->
+        <article class="cv-card cv-card-dark" role="listitem" aria-label="Core Value: Empathy">
+          <div class="cv-icon" aria-hidden="true">
+            <span class="cv-icon-dot"></span>
+            <svg viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Empathy</h3>
+          <div class="cv-rule"></div>
+          <p>Placing the child at the centre of our existence — understanding every learner's unique needs with care and compassion.</p>
+        </article>
+
+        <!-- Quality -->
+        <article class="cv-card cv-card-light" role="listitem" aria-label="Core Value: Quality">
+          <div class="cv-icon" aria-hidden="true">
+            <span class="cv-icon-dot"></span>
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <h3>Quality</h3>
+          <div class="cv-rule"></div>
+          <p>Pursuing best-in-class standards with transparency, dignity and respect — setting benchmarks that define excellence in education.</p>
+        </article>
+
+        <!-- Teamwork -->
+        <article class="cv-card cv-card-dark" role="listitem" aria-label="Core Value: Teamwork">
+          <div class="cv-icon" aria-hidden="true">
+            <span class="cv-icon-dot"></span>
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Teamwork</h3>
+          <div class="cv-rule"></div>
+          <p>The best solutions emerge when we work together — combining collective experience and spirit to build a stronger community.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+<style>
+
+        /* =============================================
+           ABOUT SECTION
+        ============================================= */
+        .about-section {
+            background: #0b1540;
+            padding: 80px 5vw 90px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* =============================================
+           LEFT COLUMN — TEXT
+        ============================================= */
+        .about-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* "ABOUT US" label with gold left border */
+        .about-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.4rem;
+        }
+        .about-label-line {
+            width: 38px;
+            height: 3px;
+            background: #f5a623;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .about-label-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        /* Main heading */
+        .about-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.4rem);
+            font-weight: 800;
+            line-height: 1.05;
+            color: #ffffff;
+            margin-bottom: 0;
+        }
+
+        /* Gold rule under heading */
+        .about-heading-rule {
+            width: 52px;
+            height: 4px;
+            background: #f5a623;
+            border-radius: 3px;
+            margin: 1.1rem 0 1.4rem;
+        }
+
+        /* Gold subtitle */
+        .about-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #f5a623;
+            line-height: 1.6;
+            margin-bottom: 1.6rem;
+            max-width: 560px;
+        }
+
+        /* Pill badges row */
+        .about-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+        .about-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.5rem 1.1rem;
+            border-radius: 50px;
+        }
+        .about-pill .pill-icon {
+            font-size: 0.9rem;
+        }
+
+        /* Body paragraphs */
+        .about-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #cdd5f0;
+            margin-bottom: 1rem;
+            max-width: 620px;
+        }
+        .about-body p strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* =============================================
+           RIGHT COLUMN — IMAGE GRID
+        ============================================= */
+        .about-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+.about-img-main {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a2460;
+    border: 1px solid rgba(255,255,255,0.08);
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.about-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+        /* Placeholder styling */
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            color: rgba(255,255,255,0.3);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            background: #16235a;
+            min-height: 260px;
+        }
+        .img-placeholder svg {
+            opacity: 0.35;
+        }
+        .img-placeholder span {
+            opacity: 0.5;
+        }
+
+        /* Two smaller images side by side */
+        .about-img-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .about-img-small {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #1a2460;
+            border: 1px solid rgba(255,255,255,0.08);
+            aspect-ratio: 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-img-small .img-placeholder {
+            min-height: 160px;
+        }
+
+        /* =============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 960px) {
+            .about-section {
+                padding: 60px 5vw 70px;
+            }
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .about-body p {
+                max-width: 100%;
+            }
+            .about-subtitle {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-section {
+                padding: 50px 5vw 60px;
+            }
+            .about-heading {
+                font-size: 2.4rem;
+            }
+            .about-pill {
+                font-size: 0.75rem;
+                padding: 0.45rem 0.9rem;
+            }
+            .about-img-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+<section class="about-section" id="about" aria-label="About British Grammar School Secunderabad">
+    <div class="about-container">
+
+        <!-- LEFT: Text -->
+        <div class="about-left">
+
+            <div class="about-label">
+                <div class="about-label-line"></div>
+                <span class="about-label-text">About Us</span>
+            </div>
+
+            <h1 class="about-heading">
+                About<br>British Grammar School
+            </h1>
+
+            <div class="about-heading-rule"></div>
+
+            <p class="about-subtitle">
+                Nurturing young minds with joyful learning, strong values, and future-ready education.
+            </p>
+
+            <div class="about-pills">
+                <span class="about-pill">
+                    <span class="pill-icon">&#128205;</span> Secunderabad
+                </span>
+                <span class="about-pill">
+                    <span class="pill-icon">&#127979;</span> LKG to Class 10
+                </span>
+                <span class="about-pill">
+                    <span class="pill-icon">&#127970;</span> SSC Affiliated
+                </span>
+                <span class="about-pill">
+                    <span class="pill-icon">&#11088;</span> Est. 2010
+                </span>
+            </div>
+
+            <div class="about-body">
+                <p>
+                    Welcome to <strong>British Grammar School, Secunderabad</strong>, one of the leading
+                    <strong>SSC schools in Secunderabad</strong> dedicated to academic excellence,
+                    holistic development, and future-ready learning. Since 2010, we have provided a
+                    safe, student-centred environment where children from <strong>LKG to Class 10</strong>
+                    are encouraged to build confidence, creativity, leadership skills, and strong
+                    academic foundations through joyful and value-based education.
+                </p>
+                <p>
+                    Our innovative learning environment empowers students with confidence, creativity,
+                    communication skills, leadership qualities, and strong values.
+                </p>
+                <p>
+                    From academics and sports to arts, robotics, music, and experiential learning,
+                    we help every child discover their strengths and achieve their highest potential.
+                </p>
+            </div>
+
+        </div>
+
+<!-- RIGHT: Images -->
+<div class="about-right">
+
+    <!-- Large main photo -->
+    <div class="about-img-main">
+        <img src="images/groupimage.jpeg" alt="British Grammar School Secunderabad students during a school activity">
+    </div>
+
+    <!-- Two smaller photos -->
+    <div class="about-img-row">
+
+        <div class="about-img-small">
+            <div class="img-placeholder">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+                <span>Add School Building Photo</span>
+            </div>
+        </div>
+
+        <div class="about-img-small">
+            <div class="img-placeholder">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+                <span>Add Classroom Photo</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+</section>
+
+<!--why us-->
+
+<section class="why-section" id="why-choose-us" aria-label="Why choose British Grammar School Secunderabad">
+  <div class="why-container">
+
+    <!-- Z-PATTERN: Image grid on TOP RIGHT, text flows bottom-left naturally -->
+    <div class="why-top">
+
+      <!-- LEFT TEXT -->
+      <div class="why-text">
+        <div class="why-badge">WHY CHOOSE US</div>
+
+        <h2 class="why-heading">
+          Everything Your<br>
+          Child<br>
+          Needs to <span>Learn,<br>Grow & Succeed</span>
+        </h2>
+
+        <div class="why-line"></div>
+
+        <p>
+          At British Grammar School, Secunderabad, we believe every child deserves an environment that inspires confidence, creativity, discipline, and academic excellence. Our school combines strong SSC academics with holistic development to help students become future-ready learners and responsible individuals.
+        </p>
+
+        <p>
+          As one of the leading SSC schools in Secunderabad, we focus on conceptual learning, communication skills, leadership, creativity, sports, and character building. From LKG to Class 10, students receive personalized attention from experienced faculty in a safe and nurturing learning environment.
+        </p>
+
+        <p>
+          Through smart classrooms, co-curricular activities, sports programs, arts, cultural events, and technology-integrated education, we ensure every child develops the confidence and practical skills needed for lifelong success.
+        </p>
+
+        <p>
+          Our mission is to create a positive and engaging atmosphere where students are encouraged to explore their talents, think independently, and grow into compassionate global citizens prepared for the future.
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE GRID - now positioned on the TOP RIGHT following Z-pattern -->
+      <div class="why-images">
+
+        <div class="image-card">
+          <div class="image-area academics-img"></div>
+          <div class="image-content">
+            <div class="round-icon">📖</div>
+            <h3>Add Academics Image</h3>
+            <p>Classrooms, Learning, Teachers</p>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="image-area sports-img"></div>
+          <div class="image-content">
+            <div class="round-icon">🏆</div>
+            <h3>Add Sports Image</h3>
+            <p>Sports, Games, Activities</p>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="image-area culture-img"></div>
+          <div class="image-content">
+            <div class="round-icon">🎵</div>
+            <h3>Add Arts & Culture Image</h3>
+            <p>Music, Dance, Art, Events</p>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="image-area communication-img"></div>
+          <div class="image-content">
+            <div class="round-icon">👥</div>
+            <h3>Add Communication Image</h3>
+            <p>Teachers, Parents, Interaction</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOTTOM FEATURE CARDS -->
+    <div class="why-cards">
+
+      <div class="why-card">
+        <div class="why-card-icon">📖</div>
+        <h3>Academics</h3>
+        <div class="card-line"></div>
+        <p>Strong SSC curriculum focused on conceptual understanding, critical thinking, problem solving, and strong foundational learning for future academic success.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🏆</div>
+        <h3>Sports</h3>
+        <div class="card-line"></div>
+        <p>Indoor and outdoor sports activities that promote discipline, teamwork, confidence, leadership, physical fitness, and healthy competition.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">🎵</div>
+        <h3>Arts & Culture</h3>
+        <div class="card-line"></div>
+        <p>Music, dance, drama, arts, and annual cultural events that encourage creativity, self-expression, confidence, and personality development.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-icon">👥</div>
+        <h3>Transparent Communication</h3>
+        <div class="card-line"></div>
+        <p>Strong parent-school communication with regular academic updates, PTMs, feedback systems, and collaborative student progress tracking.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .why-section {
+    width: 100%;
+    padding: 55px 60px;
+    background: linear-gradient(135deg, #fffaf2 0%, #ffffff 50%, #f3f8ff 100%);
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Z-PATTERN: Image grid naturally sits on the right, text on left - perfect Z flow */
+  .why-top {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .why-badge {
+    display: inline-block;
+    background: #071f6b;
+    color: #f5a623;
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  .why-heading {
+    font-family: 'Playfair Display', serif;
+    color: #071f6b;
+    font-size: clamp(3rem, 5vw, 5.1rem);
+    line-height: 1.08;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .why-heading span {
+    color: #f5a623;
+  }
+
+  .why-line,
+  .card-line {
+    width: 52px;
+    height: 4px;
+    background: #f5a623;
+    border-radius: 999px;
+  }
+
+  .why-line {
+    margin: 28px 0;
+  }
+
+  .why-text p {
+    color: #1f3769;
+    font-size: 15.5px;
+    line-height: 1.85;
+    font-weight: 500;
+    margin: 0 0 18px;
+    max-width: 640px;
+  }
+
+  .why-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-self: center;
+  }
+
+  .image-card {
+    background: #eef5ff;
+    border: 1.5px dashed rgba(7, 31, 107, 0.35);
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 280px;
+    box-shadow: 0 14px 35px rgba(7, 31, 107, 0.08);
+  }
+
+  .image-area {
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .academics-img {
+    background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80');
+  }
+
+  .sports-img {
+    background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80');
+  }
+
+  .culture-img {
+    background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=800&q=80');
+  }
+
+  .communication-img {
+    background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80');
+  }
+
+  .image-content {
+    background: #f5f9ff;
+    text-align: center;
+    padding: 0 18px 24px;
+    position: relative;
+  }
+
+  .round-icon {
+    width: 64px;
+    height: 64px;
+    background: #071f6b;
+    color: #f5a623;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -32px auto 16px;
+    font-size: 26px;
+    box-shadow: 0 8px 20px rgba(7, 31, 107, 0.22);
+  }
+
+  .image-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: #071f6b;
+    font-size: 22px;
+    margin: 0 0 8px;
+  }
+
+  .image-content p {
+    color: #40537c;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .why-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+  }
+
+  .why-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 34px 28px;
+    min-height: 300px;
+    box-shadow: 0 18px 40px rgba(7, 31, 107, 0.09);
+    border: 1px solid rgba(7, 31, 107, 0.07);
+  }
+
+  .why-card-icon {
+    width: 62px;
+    height: 62px;
+    background: #071f6b;
+    color: #f5a623;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #071f6b;
+    font-size: 27px;
+    line-height: 1.15;
+    margin: 0 0 14px;
+  }
+
+  .card-line {
+    width: 42px;
+    height: 3px;
+    margin-bottom: 20px;
+  }
+
+  .why-card p {
+    color: #40537c;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .why-top {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .why-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .why-section {
+      padding: 50px 20px;
+    }
+
+    .why-images,
+    .why-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .why-heading {
+      font-size: 2.8rem;
+    }
+  }
+</style>
+
+<!-- ADMISSIONS SECTION -->
+
+<style>
+.admissions-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafd 100%);
+  padding: 4rem 2.5rem;
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  width: 100%;
+}
+
+.admissions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admissions-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admissions-badge {
+  display: inline-block;
+  background: rgba(245,166,35,0.12);
+  color: #f5a623;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(245,166,35,0.25);
+}
+
+.admissions-title {
+  font-family: 'Playfair Display', serif;
+  color: #0f1e5c;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.admissions-title span {
+  color: #f5a623;
+}
+
+.admissions-description {
+  color: #4a5a8c;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.apply-now-wrapper {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.apply-now-btn {
+  display: inline-block;
+  background: #f5a623;
+  color: #0f1e5c;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 14px 42px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(245,166,35,0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.apply-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(245,166,35,0.4);
+  background: #ffb73c;
+}
+
+#admission-form {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+
+  .admissions-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .apply-now-btn {
+    padding: 12px 32px;
+    font-size: 0.9rem;
+  }
+
+}
+</style>
+
+<section class="admissions-section" aria-label="Admissions open at British Grammar School Secunderabad">
+
+  <div class="admissions-container">
+
+    <div class="admissions-header">
+
+      <div class="admissions-badge">
+        Admissions Open for LKG to Class 10
+      </div>
+
+      <h1 class="admissions-title">
+        Admissions Open <span>2026–27</span>
+      </h1>
+
+      <p class="admissions-description">
+        British Grammar School, Secunderabad — a top SSC school offering quality education from LKG to Class 10. We nurture confident, well-rounded students through experienced teachers, innovative methods, and a supportive learning environment.
+      </p>
+
+    </div>
+
+    <div class="apply-now-wrapper">
+      <a href="#admission-form" class="apply-now-btn">
+        Apply now
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+(function() {
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener('click', function(e) {
+
+      const targetId = this.getAttribute('href');
+
+      if (targetId === "#" || targetId === "") return;
+
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+
+        e.preventDefault();
+
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
+        history.pushState(null, null, targetId);
+
+      }
+
+    });
+
+  });
+
+})();
+</script>
+
+<!-- ADMISSION FORM SECTION -->
+
+<style>
+
+.admission-bg {
+  width: 100%;
+  background: #0a1540;
+  padding: 90px 24px;
+  margin: 0;
+}
+
+.admission-form-section {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 34px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #0f1e5c 0%, #142c6e 100%);
+  padding: 2.4rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-header h1 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #c4d0ef;
+  font-size: 0.9rem;
+}
+
+.form-body {
+  padding: 3rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #0f1e5c;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  background: #fefefe;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+}
+
+.submit-btn {
+  background: #f5a623;
+  color: #0f1e5c;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.submit-btn:hover {
+  background: #ffb73c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245,166,35,0.3);
+}
+
+@media (max-width: 640px) {
+
+  .admission-bg {
+    padding: 60px 16px;
+  }
+
+  .form-body {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    gap: 1rem;
+  }
+
+}
+
+</style>
+
+<section class="admission-bg" id="admission-form" aria-label="British Grammar School admission application form">
+
+  <div class="admission-form-section">
+
+    <div class="form-header">
+      <h1>Apply for Admission</h1>
+      <p>Fill the details below to begin your journey with BGS</p>
+    </div>
+
+    <div class="form-body">
+
+      <form action="https://formsubmit.co/ajpratheek@gmail.com" method="POST">
+
+        <input type="hidden" name="_subject" value="New Admission Application — British Grammar School">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://britishgrammarschool.local/">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Student Name *</label>
+            <input type="text" name="Student Name" placeholder="Full name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent/Guardian Name *</label>
+            <input type="text" name="Parent Guardian Name" placeholder="Full name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Class Applying For *</label>
+
+            <select name="Class Applying For" required>
+
+              <option value="">--- Select Choice ---</option>
+              <option value="LKG">LKG</option>
+              <option value="UKG">UKG</option>
+              <option value="Class 1">Class 1</option>
+              <option value="Class 2">Class 2</option>
+              <option value="Class 3">Class 3</option>
+              <option value="Class 4">Class 4</option>
+              <option value="Class 5">Class 5</option>
+              <option value="Class 6">Class 6</option>
+              <option value="Class 7">Class 7</option>
+              <option value="Class 8">Class 8</option>
+              <option value="Class 9">Class 9</option>
+              <option value="Class 10">Class 10</option>
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" name="Phone Number" placeholder="+91 XXXXXXXXXX" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Submit Application
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; font-family: 'DM Sans', sans-serif; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      width: 100%;
+      background: #1a3080;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
+        radial-gradient(circle at 85% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-eyebrow {
+      display: inline-block;
+      background: transparent;
+      color: #f5a623;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 5px 20px;
+      border-radius: 999px;
+      border: 1.5px solid #f5a623;
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      color: #fff;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-subtitle {
+      color: #8fa4d8;
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── CARDS GRID ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-card {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      text-align: left;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .contact-card:hover {
+      border-color: rgba(245,166,35,0.4);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: #f5a623;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+
+    .contact-card-label {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .contact-card-value {
+      color: #8fa4d8;
+      font-size: 0.88rem;
+      font-weight: 400;
+    }
+    .contact-card-value a {
+      color: #8fa4d8;
+      text-decoration: none;
+    }
+    .contact-card-value a:hover { color: #f5a623; }
+
+    /* ── MAP SECTION ── */
+    .map-divider {
+      width: 60px;
+      height: 3px;
+      background: #f5a623;
+      border-radius: 999px;
+      margin: 3.5rem auto 0;
+    }
+
+    .map-section {
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+
+    .map-heading-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .map-eyebrow {
+      display: inline-block;
+      color: #f5a623;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 5px 20px;
+      border-radius: 999px;
+      border: 1.5px solid #f5a623;
+      margin-bottom: 0.8rem;
+    }
+
+    .map-title {
+      color: #fff;
+      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      font-weight: 700;
+    }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .map-embed {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.13);
+      min-height: 360px;
+    }
+
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: block;
+      border: none;
+      filter: saturate(0.7) brightness(0.9);
+    }
+
+    .map-info-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .map-info-title {
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .map-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .map-info-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: rgba(245,166,35,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-info-icon svg {
+      width: 17px;
+      height: 17px;
+      fill: #f5a623;
+    }
+
+    .map-info-label {
+      color: #8fa4d8;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .map-info-value {
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .map-directions-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #f5a623;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: auto;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .map-directions-btn:hover {
+      background: #e09518;
+      transform: translateY(-1px);
+    }
+    .map-directions-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: #fff;
+    }
+
+    /* ── DIVIDER ── */
+    .faq-divider {
+      width: 60px;
+      height: 3px;
+      background: #f5a623;
+      border-radius: 999px;
+      margin: 3.5rem auto 0;
+    }
+
+    /* ── FAQ SECTION ── */
+    .faq-section {
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+
+    .faq-heading-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-eyebrow {
+      display: inline-block;
+      color: #f5a623;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 5px 20px;
+      border-radius: 999px;
+      border: 1.5px solid #f5a623;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-title {
+      color: #fff;
+      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      font-weight: 700;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .faq-item.open {
+      border-color: rgba(245,166,35,0.4);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: none;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      fill: #f5a623;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+      background: rgba(255,255,255,0.02);
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 1.4rem 1.2rem;
+      color: #8fa4d8;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* ── ASK A QUESTION FORM ── */
+    .ask-wrap {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .ask-title {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .ask-sub {
+      color: #8fa4d8;
+      font-size: 0.83rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .ask-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .ask-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .ask-field label {
+      color: #8fa4d8;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .ask-field input,
+    .ask-field textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .ask-field input::placeholder,
+    .ask-field textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+    .ask-field input:focus,
+    .ask-field textarea:focus {
+      border-color: #f5a623;
+    }
+
+    .ask-field-full {
+      margin-bottom: 0.8rem;
+    }
+
+    .ask-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5a623;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .ask-submit:hover {
+      background: #e09518;
+      transform: translateY(-1px);
+    }
+    .ask-submit svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    .ask-success {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-top: 1rem;
+      color: #25d366;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .ask-success.show { display: flex; }
+    .ask-success svg { width: 18px; height: 18px; fill: #25d366; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .map-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .ask-row { grid-template-columns: 1fr; }
+      .contact-section { padding: 3rem 1.25rem; }
+    }
+  </style>
+
+<section class="contact-section" id="contact-us">
+  <div class="contact-inner">
+
+    <div class="contact-eyebrow">Contact us</div>
+    <h2 class="contact-title">Visit or Contact British Grammar School</h2>
+    <p class="contact-subtitle">We're here to answer all your questions — come meet us in Secunderabad</p>
+
+    <!-- Cards -->
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Address</div>
+          <div class="contact-card-value">
+            <a href="https://maps.app.goo.gl/D4k88eP4Xu1TwYtz5" target="_blank" rel="noopener noreferrer">
+              British Grammar School, Secunderabad, Telangana
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value"><a href="tel:+919603493956">+91 96034 93956</a></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value"><a href="mailto:info@britishgrammarschool.in">info@britishgrammarschool.in</a></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 11H11V7h1.5v5.25l4.5 2.67-.75 1.23L12.5 13z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">School hours</div>
+          <div class="contact-card-value">Mon – Sat: 9:00 AM – 5:00 PM</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-divider"></div>
+
+    <div class="map-section">
+      <div class="map-heading-wrap">
+        <div class="map-eyebrow">Find Us</div>
+        <h3 class="map-title">Visit Our Campus in Secunderabad</h3>
+      </div>
+
+      <div class="map-layout">
+
+        <div class="map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=British+Grammar+School+Secunderabad+Telangana&z=18&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="British Grammar School location on Google Maps">
+          </iframe>
+        </div>
+
+        <div class="map-info-card">
+
+          <div class="map-info-title">Campus Information</div>
+
+          <div class="map-info-row">
+            <div class="map-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            </div>
+            <div>
+              <div class="map-info-label">Address</div>
+              <div class="map-info-value">British Grammar School<br>Secunderabad, Telangana</div>
+            </div>
+          </div>
+
+          <div class="map-info-row">
+            <div class="map-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L20 8.1v7.8L12 19.82 4 15.9V8.1l8-3.92z"/></svg>
+            </div>
+            <div>
+              <div class="map-info-label">Landmark</div>
+              <div class="map-info-value">Central Secunderabad — easily accessible from all areas of Hyderabad</div>
+            </div>
+          </div>
+
+          <div class="map-info-row">
+            <div class="map-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
+            </div>
+            <div>
+              <div class="map-info-label">Parking</div>
+              <div class="map-info-value">Parking available on campus for visitors & parents</div>
+            </div>
+          </div>
+
+          <div class="map-info-row">
+            <div class="map-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 11H11V7h1.5v5.25l4.5 2.67-.75 1.23L12.5 13z"/></svg>
+            </div>
+            <div>
+              <div class="map-info-label">School Timings</div>
+              <div class="map-info-value">Mon – Sat: 9:00 AM – 5:00 PM<br>Admissions: Walk-in welcome</div>
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/D4k88eP4Xu1TwYtz5" target="_blank" rel="noopener noreferrer" class="map-directions-btn">
+            <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.42 0l-9 9a1 1 0 000 1.42l9 9a1 1 0 001.42 0l9-9a1 1 0 000-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+            Get Directions
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-divider"></div>
+
+    <div class="faq-section">
+
+      <div class="faq-heading-wrap">
+        <div class="faq-eyebrow">FAQ</div>
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the admission process at BGS?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Admissions are open throughout the year. Parents can visit the school between 9 AM – 5 PM on any working day, or contact us via phone/WhatsApp to schedule an appointment. We'll guide you through the registration form, entrance assessment, and fee structure.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Which curriculum does BGS follow?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">British Grammar School follows the SSC curriculum while integrating elements of British-style pedagogy — focusing on critical thinking, communication skills, and holistic development alongside strong academics.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What grades / classes are offered?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We offer classes from LKG through Grade 10. Each grade maintains small class sizes to ensure personalised attention for every student.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What is the student-to-teacher ratio at BGS?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We maintain small class sizes with a low student-to-teacher ratio, ensuring every child receives personalised attention and support. This allows our teachers to understand each student's strengths and guide them more effectively throughout their academic journey.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How can I get the fee structure?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">The fee structure is shared during the admission inquiry. You can call us at +91 96034 93956, send us a WhatsApp message, or use the form below and we'll email you the full details.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ask a Question Form -->
+      <div class="ask-wrap">
+        <div class="ask-title">Still have a question?</div>
+        <div class="ask-sub">Fill in the form and we'll reply to your email directly.</div>
+
+        <div class="ask-row">
+          <div class="ask-field">
+            <label>Your Name</label>
+            <input type="text" id="askName" placeholder="e.g. Priya Sharma">
+          </div>
+          <div class="ask-field">
+            <label>Your Email</label>
+            <input type="email" id="askEmail" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="ask-field ask-field-full">
+          <label>Your Question</label>
+          <textarea id="askMessage" rows="4" placeholder="Type your question here…"></textarea>
+        </div>
+
+        <button class="ask-submit" id="askBtn" onclick="sendQuestion()">
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          Send Question
+        </button>
+
+        <div class="ask-success" id="askSuccess">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Your question has been sent! We'll reply to your email shortly.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  async function sendQuestion() {
+    const name    = document.getElementById('askName').value.trim();
+    const email   = document.getElementById('askEmail').value.trim();
+    const message = document.getElementById('askMessage').value.trim();
+    const btn     = document.getElementById('askBtn');
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields before sending.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = 'Sending…';
+
+    try {
+      const res = await fetch('https://formspree.io/f/mvzlwrqq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      if (res.ok) {
+        document.getElementById('askSuccess').classList.add('show');
+        document.getElementById('askName').value    = '';
+        document.getElementById('askEmail').value   = '';
+        document.getElementById('askMessage').value = '';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      alert('Network error. Please check your connection.');
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Send Question';
+  }
+</script>
+
+<!-- FOOTER SECTION -->
+
+<style>
+.footer-section,
+.footer-section * {
+  box-sizing: border-box;
+}
+
+.footer-section {
+  background-color: #1a1f5e;
+  color: #c8cbe8;
+  padding: 48px 60px 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.footer-brand h2 {
+  font-family: 'Playfair Display', serif;
+  color: #f5c518;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: #c8cbe8;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-family: 'Playfair Display', serif;
+  color: #f5c518;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #c8cbe8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-links ul li a:hover {
+  color: #f5c518;
+}
+
+.footer-contact .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  color: #c8cbe8;
+}
+
+.footer-contact .contact-item span.icon {
+  font-size: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 18px;
+  text-align: right;
+  font-size: 0.78rem;
+  color: #8a8fc4;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-section {
+    padding: 36px 24px 20px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+</style>
+
+<footer class="footer-section">
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <h2>British Grammar School</h2>
+      <p>SSC Affiliated | Est. 2010</p>
+      <p>Classes LKG to 10th</p>
+      <p>Secunderabad, Telangana</p>
+      <p>Nurturing Excellence Since 2010</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#why-choose-us">Why BGS</a></li>
+        <li><a href="#admission-form">Admissions</a></li>
+        <li><a href="#contact-us">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <span>Secunderabad, Telangana</span>
+      </div>
+
+      <div class="contact-item">
+        <span class="icon">📞</span>
+        <span>+91 96034 93956</span>
+      </div>
+
+      <div class="contact-item">
+        <span class="icon">✉️</span>
+        <span>info@britishgrammarschool.in</span>
+      </div>
+
+      <div class="contact-item">
+        <span class="icon">🕐</span>
+        <span>Mon–Sat: 9AM – 5PM</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 British Grammar School, Secunderabad. All rights reserved.
+  </div>
+</footer>
+
+  <style>
+    #wa-widget,
+    #wa-widget * ,
+    #wa-widget *::before,
+    #wa-widget *::after {
+      box-sizing: border-box;
+    }
+
+    /* ── WIDGET WRAPPER ── */
+    #wa-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    /* ── POPUP CARD ── */
+    #wa-popup {
+      width: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+      background: #ece5dd;
+      display: none;
+      flex-direction: column;
+      animation: popUp 0.25s ease;
+    }
+
+    #wa-popup.open {
+      display: flex;
+    }
+
+    @keyframes popUp {
+      from { opacity: 0; transform: translateY(16px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    /* Header */
+    .wa-header {
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      position: relative;
+    }
+
+    .wa-header img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.5);
+      background: #fff;
+    }
+
+    /* Fallback logo circle if no img */
+    .wa-logo-fallback {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: #1a1f5e;
+      text-align: center;
+      line-height: 1.2;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .wa-header-info {
+      flex: 1;
+    }
+
+    .wa-header-info .wa-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+
+    .wa-header-info .wa-status {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .wa-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff200;
+      display: inline-block;
+    }
+
+    .wa-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.2rem;
+      line-height: 1;
+      padding: 2px 4px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+
+    .wa-close:hover { opacity: 1; }
+
+    /* Body */
+    .wa-body {
+      padding: 20px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Chat bubble */
+    .wa-bubble {
+      background: #fff;
+      border-radius: 0 12px 12px 12px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      font-size: 0.875rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .wa-bubble strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #111;
+      font-size: 0.9rem;
+    }
+
+    /* Start chat button */
+    .wa-start-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 40px;
+      padding: 13px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.35);
+    }
+
+    .wa-start-btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+    }
+
+    .wa-start-btn svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .wa-via {
+      text-align: center;
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: -6px;
+    }
+
+    /* ── FLOATING BUTTON ── */
+    #wa-fab {
+      background: #25d366;
+      color: #fff;
+      border: none;
+      border-radius: 40px;
+      padding: 13px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    #wa-fab:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(37,211,102,0.55);
+    }
+
+    #wa-fab svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Orange notification dot */
+    .wa-notif-dot {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 13px;
+      height: 13px;
+      background: #f59e0b;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+  </style>
+
+
+<!-- ══ WIDGET ══ -->
+<div id="wa-widget">
+
+  <!-- Popup card -->
+  <div id="wa-popup" role="dialog" aria-label="Chat with British Grammar School">
+    <!-- Header -->
+    <div class="wa-header">
+      <div class="wa-logo-fallback">BGS</div>
+      <div class="wa-header-info">
+        <div class="wa-name">British Grammar School</div>
+        <div class="wa-status">
+          <span class="wa-status-dot"></span> Online
+        </div>
+      </div>
+      <button class="wa-close" id="wa-close-btn" aria-label="Close chat">&#x2715;</button>
+    </div>
+
+    <!-- Body -->
+    <div class="wa-body">
+      <!-- Bubble -->
+      <div class="wa-bubble">
+        <strong>British Grammar School</strong>
+        Hi,<br>How can we help you?
+      </div>
+
+      <!-- Start Chat -->
+      <a
+        id="wa-start"
+        class="wa-start-btn"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Start WhatsApp chat"
+      >
+        <!-- WhatsApp icon -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.65 4.832 1.788 6.858L2 30l7.338-1.766A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#fff" fill-opacity=".15"/>
+          <path d="M16 3.5C9.096 3.5 3.5 9.096 3.5 16c0 2.29.609 4.437 1.673 6.286L3.5 28.5l6.384-1.658A12.447 12.447 0 0016 28.5c6.904 0 12.5-5.596 12.5-12.5S22.904 3.5 16 3.5zm6.478 17.012c-.27.758-1.582 1.45-2.16 1.54-.552.086-1.248.122-2.012-.126-.464-.15-1.058-.35-1.818-.686-3.2-1.382-5.29-4.612-5.45-4.826-.158-.214-1.286-1.712-1.286-3.266 0-1.553.814-2.318 1.102-2.632.27-.294.59-.368.786-.368.196 0 .392.002.564.01.18.008.424-.068.664.508.246.59.836 2.044.908 2.19.074.146.122.318.024.512-.098.196-.146.318-.29.49-.144.172-.304.384-.434.516-.146.144-.298.3-.128.588.17.29.754 1.246 1.618 2.018 1.112.992 2.05 1.298 2.338 1.444.29.146.46.122.63-.074.172-.196.736-.858.932-1.152.196-.294.392-.244.662-.146.27.098 1.716.81 2.01.956.294.146.49.22.564.342.072.122.072.7-.198 1.458z" fill="#fff"/>
+        </svg>
+        Start chat
+      </a>
+
+      <p class="wa-via">via WhatsApp</p>
+    </div>
+  </div>
+
+  <!-- FAB -->
+  <button id="wa-fab" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3.5C9.096 3.5 3.5 9.096 3.5 16c0 2.29.609 4.437 1.673 6.286L3.5 28.5l6.384-1.658A12.447 12.447 0 0016 28.5c6.904 0 12.5-5.596 12.5-12.5S22.904 3.5 16 3.5zm6.478 17.012c-.27.758-1.582 1.45-2.16 1.54-.552.086-1.248.122-2.012-.126-.464-.15-1.058-.35-1.818-.686-3.2-1.382-5.29-4.612-5.45-4.826-.158-.214-1.286-1.712-1.286-3.266 0-1.553.814-2.318 1.102-2.632.27-.294.59-.368.786-.368.196 0 .392.002.564.01.18.008.424-.068.664.508.246.59.836 2.044.908 2.19.074.146.122.318.024.512-.098.196-.146.318-.29.49-.144.172-.304.384-.434.516-.146.144-.298.3-.128.588.17.29.754 1.246 1.618 2.018 1.112.992 2.05 1.298 2.338 1.444.29.146.46.122.63-.074.172-.196.736-.858.932-1.152.196-.294.392-.244.662-.146.27.098 1.716.81 2.01.956.294.146.49.22.564.342.072.122.072.7-.198 1.458z" fill="#fff"/>
+    </svg>
+    Chat with us
+    <span class="wa-notif-dot"></span>
+  </button>
+
+</div>
+
+<script>
+  const phone   = '919603493956';
+  const message = encodeURIComponent("Hi, I'm interested in learning more about admission details. Could you please share the details?");
+  const waURL   = `https://wa.me/${phone}?text=${message}`;
+
+  document.getElementById('wa-start').href = waURL;
+
+  const popup  = document.getElementById('wa-popup');
+  const fab    = document.getElementById('wa-fab');
+  const closeBtn = document.getElementById('wa-close-btn');
+
+  fab.addEventListener('click', () => {
+    popup.classList.toggle('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
