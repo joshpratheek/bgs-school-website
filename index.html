@@ -2849,7 +2849,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 }
 </style>
   
-<!-- CAMPUS GALLERY SECTION -->
+<!-- CAMPUS GALLERY SECTION - GLITCH FIXED -->
 
 <section class="gallery-section" id="campus-gallery">
   <div class="gallery-container">
@@ -2888,6 +2888,8 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   background: linear-gradient(135deg, #0a1128 0%, #1a2847 100%);
   padding: 70px 20px 95px;
   font-family: 'DM Sans', sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
 .gallery-container {
@@ -2946,16 +2948,21 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   position: relative;
   width: 100%;
   overflow: hidden;
-  touch-action: pan-y pinch-zoom;
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
+  /* GLITCH FIX: Prevent reflow and scroll jumps */
+  contain: layout style paint;
+  will-change: auto;
+  overflow-anchor: none;
 }
 
 .carousel {
   display: flex;
   width: 100%;
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  /* GLITCH FIX: Prevent scroll behavior during transition */
+  scroll-behavior: auto;
 }
 
 .carousel-slide {
@@ -2963,6 +2970,12 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   flex: 0 0 100%;
   height: 520px;
   background: #071124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* GLITCH FIX: Fixed height prevents layout shift */
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .carousel-slide img {
@@ -2972,6 +2985,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   object-position: center;
   display: block;
   background: #071124;
+  /* GLITCH FIX: Prevent image loading from causing reflow */
+  aspect-ratio: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .carousel-nav {
@@ -2991,6 +3008,9 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   align-items: center;
   justify-content: center;
   transition: 0.25s ease;
+  /* GLITCH FIX: Prevent button presses from affecting scroll */
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .carousel-nav:hover {
@@ -3017,6 +3037,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   font-size: 14px;
   font-weight: 700;
   z-index: 40;
+  pointer-events: none;
 }
 
 .carousel-thumbnails {
@@ -3025,7 +3046,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   gap: 14px;
   width: 100%;
   margin-top: 24px;
-  margin-bottom: 90px;
+  margin-bottom: 0px;
   padding: 0 14px;
 }
 
@@ -3042,6 +3063,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .thumbnail.active {
@@ -3064,6 +3086,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   font-size: 15px;
   font-weight: 700;
   background: #17305f;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -3092,7 +3115,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   .carousel-thumbnails {
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    margin-bottom: 70px;
+    margin-bottom: 0px;
   }
 
   .thumbnail {
@@ -3115,7 +3138,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 
   .carousel-thumbnails {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 60px;
+    margin-bottom: 0px;
   }
 
   .thumbnail {
@@ -3128,16 +3151,20 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   }
 }
 
-/* MOBILE TOUCH FIX */
+/* GLITCH FIX: Disable automatic scroll anchoring */
+html {
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
 
 .carousel,
 .carousel-slide,
-.carousel-slide img{
-  touch-action: pan-y pinch-zoom;
-  -webkit-user-drag:none;
-  user-select:none;
+.carousel-slide img {
+  touch-action: manipulation;
+  -webkit-user-drag: none;
+  user-select: none;
+  overscroll-behavior: contain;
 }
-
 
 </style>
 
@@ -3145,6 +3172,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 (function () {
   let currentSlide = 0;
   let currentYear = "2026";
+  let isTransitioning = false;
 
   const imageData = {
     "2026": [
@@ -3188,10 +3216,18 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
       const slide = document.createElement("div");
       slide.className = "carousel-slide";
 
-      slide.innerHTML = `
-        <img src="${src}" alt="British Grammar School campus gallery ${currentYear} image ${index + 1}">
-      `;
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "British Grammar School campus gallery " + currentYear + " image " + (index + 1);
+      
+      // GLITCH FIX: Prevent image load from triggering scroll
+      img.style.display = "block";
+      img.addEventListener("load", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
 
+      slide.appendChild(img);
       carousel.appendChild(slide);
     });
   }
@@ -3206,8 +3242,10 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
       thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
 
       thumb.addEventListener("click", function () {
-        currentSlide = index;
-        updateCarousel();
+        if (!isTransitioning) {
+          currentSlide = index;
+          updateCarousel();
+        }
       });
 
       thumbnails.appendChild(thumb);
@@ -3215,6 +3253,13 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   }
 
   function updateCarousel() {
+    if (isTransitioning) return;
+    
+    isTransitioning = true;
+    
+    // GLITCH FIX: Prevent scroll during transform
+    const scrollY = window.scrollY;
+    
     carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
     slideCounter.textContent = currentSlide + 1;
@@ -3223,19 +3268,29 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     document.querySelectorAll(".thumbnail").forEach(function (thumb, index) {
       thumb.classList.toggle("active", index === currentSlide);
     });
+
+    // Prevent scroll jump after transition
+    setTimeout(function () {
+      window.scrollTo(0, scrollY);
+      isTransitioning = false;
+    }, 10);
   }
 
   function nextSlide() {
+    if (isTransitioning) return;
     currentSlide = (currentSlide + 1) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function prevSlide() {
+    if (isTransitioning) return;
     currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function changeYear(year) {
+    if (isTransitioning) return;
+    
     currentYear = year;
     currentSlide = 0;
 
@@ -3248,14 +3303,33 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     updateCarousel();
   }
 
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
+  // GLITCH FIX: Prevent accidental scrolls
+  nextBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    nextSlide();
+  });
+
+  prevBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    prevSlide();
+  });
 
   yearTabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
+    tab.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       changeYear(tab.dataset.year);
     });
   });
+
+  // GLITCH FIX: Prevent wheel/scroll events from affecting carousel
+  carousel.addEventListener("wheel", function (e) {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 
   renderSlides();
   renderThumbnails();
