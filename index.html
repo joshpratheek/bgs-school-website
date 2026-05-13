@@ -648,11 +648,31 @@ document.addEventListener('click', function(e) {
 }
 
 /* SLIDE 1 */
+
 .bgs-slide-1 {
-    background-color: #0a1540;
-    background-image:
-        radial-gradient(circle at 5% 50%, rgba(245,166,35,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 95% 50%, rgba(245,166,35,0.07) 0%, transparent 50%);
+    background:
+        linear-gradient(
+            rgba(7,17,36,0.45),
+            rgba(7,17,36,0.58)
+        ),
+        url('images/building.png');
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.bgs-slide-1::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 5% 50%, rgba(245,166,35,0.10) 0%, transparent 45%),
+    radial-gradient(circle at 95% 50%, rgba(245,166,35,0.06) 0%, transparent 45%);
+
+    pointer-events:none;
 }
 
 .bgs-slide-1 .bgs-badge,
@@ -3043,6 +3063,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   position: relative;
   width: 100%;
   overflow: hidden;
+  touch-action: pan-y pinch-zoom;
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
@@ -3223,6 +3244,18 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     padding: 8px 12px;
   }
 }
+
+/* MOBILE TOUCH FIX */
+
+.carousel,
+.carousel-slide,
+.carousel-slide img{
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+
+
 </style>
 
 <script>
