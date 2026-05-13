@@ -491,7 +491,7 @@ document.addEventListener('click', function(e) {
             </div>
         </div>
 
-        <!-- SLIDE 4: Montessori -->
+        <!-- SLIDE 4: Montessori — 2 images only -->
         <div class="bgs-slide bgs-slide-4">
             <div class="bgs-inner bgs-z-default">
                 <div class="bgs-text">
@@ -501,21 +501,31 @@ document.addEventListener('click', function(e) {
                     <p><strong>One Kynd Montessori, Hyderabad</strong> is a thoughtfully designed pre-primary programme giving children the strongest possible start to their lifelong learning journey. We blend internationally inspired Montessori principles with structured early childhood education to develop cognitive, emotional, creative, and social skills from day one.</p>
                     <p>Children in our <strong>LKG and UKG classes</strong> thrive in a warm, safe, stimulating environment guided by trained early childhood educators &mdash; building curiosity, independence, and a deep love for learning.</p>
                     <div class="bgs-pills">
-    <span>Phonics • Creativity • Early Learning • Montessori Play</span>
-</div>
+                        <span>Phonics • Creativity • Early Learning • Montessori Play</span>
+                    </div>
+                    <a href="#about" class="bgs-btn bgs-mont-btn">Learn More</a>
+                </div>
 
-<a href="#about" class="bgs-btn bgs-mont-btn">Learn More</a>
-                </div>
+                <!-- ✅ FIXED: 2 images stacked, matching left content height -->
                 <div class="bgs-media bgs-mont-images">
-                    <div class="bgs-mont-img bgs-mont-wide" style="background-image:url('https://placehold.co/700x280/f5e4de/e53935?text=Montessori+Classroom');"></div>
-                    <div class="bgs-mont-img" style="background-image:url('https://placehold.co/400x250/f5e4de/e53935?text=Creative+Play');"></div>
-                    <div class="bgs-mont-img" style="background-image:url('https://placehold.co/400x250/f5e4de/e53935?text=Early+Learning');"></div>
-                </div>
+
+    <div
+      class="bgs-mont-img"
+      style="background-image:url('images/onekfirst.jpeg');">
+    </div>
+
+    <div
+      class="bgs-mont-img"
+      style="background-image:url('images/oneksec.jpeg');">
+    </div>
+
+</div>
             </div>
         </div>
 
     </div>
 
+    <!-- ✅ FIXED: Arrows vertically centered -->
     <button class="bgs-arrow bgs-prev" id="bgsPrevBtn" aria-label="Previous slide">&#8592;</button>
     <button class="bgs-arrow bgs-next" id="bgsNextBtn" aria-label="Next slide">&#8594;</button>
 
@@ -529,12 +539,9 @@ document.addEventListener('click', function(e) {
 
 <style>
 /* ============================================================
-   BGS HERO SLIDER — WordPress-safe, prefixed classes
-   No special Unicode in CSS. No PHP-conflicting characters.
-   All arrow characters use HTML entities in markup.
+   BGS HERO SLIDER — FIXED: CENTERED ARROWS + SLIDE 4 2-IMAGE
 ============================================================ */
 
-/* Reset scoped to our component only */
 .bgs-hero-slider *,
 .bgs-hero-slider *::before,
 .bgs-hero-slider *::after {
@@ -543,34 +550,33 @@ document.addEventListener('click', function(e) {
     padding: 0;
 }
 
-/* Shell */
 .bgs-hero-slider {
     width: 100%;
     position: relative;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
+    touch-action: pan-y;
 }
 
-/* Track — slides sit side by side in this flex row */
 .bgs-slides-track {
     display: flex;
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    transition: transform 0.75s cubic-bezier(0.77, 0, 0.175, 1);
     will-change: transform;
 }
 
-/* Every slide — IDENTICAL padding so left text edge never moves */
 .bgs-slide {
     min-width: 100%;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
     position: relative;
     display: flex;
     align-items: stretch;
     padding-left: 5vw;
     padding-right: 5vw;
+    overflow: hidden;
 }
 
-/* Inner layout container */
 .bgs-inner {
     max-width: 1320px;
     width: 100%;
@@ -586,17 +592,14 @@ document.addEventListener('click', function(e) {
     z-index: 2;
 }
 
-/* Z-pattern direction */
 .bgs-z-default { flex-direction: row; }
-.bgs-z-reverse  { flex-direction: row-reverse; }
+.bgs-z-reverse { flex-direction: row-reverse; }
 
-/* Text column — flex-start pins left edge at the slide padding */
 .bgs-text {
     flex: 1 1 48%;
     min-width: 0;
 }
 
-/* Media column */
 .bgs-media {
     flex: 1 1 48%;
     min-width: 0;
@@ -604,11 +607,6 @@ document.addEventListener('click', function(e) {
     justify-content: center;
     align-items: center;
 }
-
-/* ============================================================
-   UNIFIED TYPOGRAPHY
-   All 4 slides share these rules exactly. No overrides.
-============================================================ */
 
 .bgs-badge {
     display: inline-block;
@@ -622,7 +620,6 @@ document.addEventListener('click', function(e) {
     margin-bottom: 1.2rem;
 }
 
-/* Same h1 on every slide — size, weight, line-height, spacing */
 .bgs-slide h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.6rem, 4.2vw, 4rem);
@@ -632,7 +629,6 @@ document.addEventListener('click', function(e) {
     letter-spacing: -0.03em;
 }
 
-/* Same p on every slide */
 .bgs-slide p {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -642,7 +638,6 @@ document.addEventListener('click', function(e) {
     max-width: 560px;
 }
 
-/* Small text inside cards should not inherit the 560px max-width */
 .bgs-topper p,
 .bgs-curr-card p,
 .bgs-stat-sub {
@@ -652,15 +647,14 @@ document.addEventListener('click', function(e) {
     margin: 0;
 }
 
-/* ============================================================
-   SLIDE 1 — Blue SSC
-============================================================ */
+/* SLIDE 1 */
 .bgs-slide-1 {
     background-color: #0a1540;
     background-image:
         radial-gradient(circle at 5% 50%, rgba(245,166,35,0.12) 0%, transparent 50%),
         radial-gradient(circle at 95% 50%, rgba(245,166,35,0.07) 0%, transparent 50%);
 }
+
 .bgs-slide-1 .bgs-badge,
 .bgs-slide-2 .bgs-badge,
 .bgs-slide-3 .bgs-badge {
@@ -668,6 +662,7 @@ document.addEventListener('click', function(e) {
     color: #ffd896;
     border: 1px solid rgba(245,166,35,0.4);
 }
+
 .bgs-slide-1 h1,
 .bgs-slide-2 h1,
 .bgs-slide-3 h1 { color: #ffffff; }
@@ -686,6 +681,7 @@ document.addEventListener('click', function(e) {
     gap: 0.5rem;
     margin: 0.8rem 0 1.5rem;
 }
+
 .bgs-highlights span {
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
@@ -709,14 +705,15 @@ document.addEventListener('click', function(e) {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, background 0.2s, transform 0.2s;
 }
+
 .bgs-btn:hover { opacity: 0.88; }
 
 .bgs-mont-btn {
     background: #e53935;
     color: #ffffff;
-    margin-top: 1.4rem;
+    margin-top: 1.2rem;
 }
 
 .bgs-mont-btn:hover {
@@ -724,13 +721,13 @@ document.addEventListener('click', function(e) {
     opacity: 1;
 }
 
-/* Curriculum grid */
 .bgs-curr-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
     width: 100%;
 }
+
 .bgs-curr-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -739,21 +736,23 @@ document.addEventListener('click', function(e) {
     text-align: center;
     transition: transform 0.2s;
 }
+
 .bgs-curr-card:hover { transform: translateY(-3px); }
+
 .bgs-curr-card.bgs-full {
     grid-column: span 2;
     background: rgba(245,166,35,0.1);
     border-color: rgba(245,166,35,0.3);
 }
+
 .bgs-curr-card .bgs-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
 .bgs-curr-card h3 { color: #ffffff; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
 
-/* ============================================================
-   SLIDE 2 — Toppers
-============================================================ */
+/* SLIDE 2 */
 .bgs-slide-2 {
     background: linear-gradient(160deg, #0a1540 0%, #0f1e5c 50%, #1a2a70 100%);
 }
+
 .bgs-ssc-tag {
     display: inline-block;
     background: #f5a623;
@@ -766,30 +765,32 @@ document.addEventListener('click', function(e) {
     margin-bottom: 0.8rem;
 }
 
-/* Podium — aligns bottom so gold card lifts above */
 .bgs-podium {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
     width: 100%;
 }
+
 .bgs-topper {
     border-radius: 24px;
     padding: 2rem 0.8rem 1.4rem;
     text-align: center;
     flex: 1;
     min-width: 120px;
-    max-width: 160px;
+    max-width: 170px;
     position: relative;
     background: rgba(255,255,255,0.05);
     transition: all 0.2s;
 }
+
 .bgs-gold {
     background: linear-gradient(145deg, rgba(245,166,35,0.2), rgba(245,166,35,0.05));
     border: 2px solid rgba(245,166,35,0.6);
     transform: translateY(-8px);
 }
+
 .bgs-silver { border: 1px solid rgba(192,192,192,0.4); }
 .bgs-bronze { border: 1px solid rgba(205,127,50,0.4); }
 
@@ -803,6 +804,7 @@ document.addEventListener('click', function(e) {
     border: 3px solid #f5a623;
     display: block;
 }
+
 .bgs-gold .bgs-photo { width: 115px; height: 115px; }
 
 .bgs-rank {
@@ -822,12 +824,11 @@ document.addEventListener('click', function(e) {
     font-weight: 800;
     font-family: 'Inter', sans-serif;
 }
+
 .bgs-topper h3 { color: #ffffff; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
 .bgs-topper h4 { color: #f5a623; font-size: 1.5rem; font-weight: 800; margin: 0.2rem 0; }
 
-/* ============================================================
-   SLIDE 3 — Legacy
-============================================================ */
+/* SLIDE 3 */
 .bgs-slide-3 { background: #0a1540; }
 
 .bgs-stats-grid {
@@ -836,6 +837,7 @@ document.addEventListener('click', function(e) {
     gap: 1rem;
     width: 100%;
 }
+
 .bgs-stat {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.1);
@@ -843,12 +845,14 @@ document.addEventListener('click', function(e) {
     padding: 1.5rem 1rem;
     text-align: center;
 }
+
 .bgs-stat-num {
     font-family: 'Playfair Display', serif;
     color: #f5a623;
     font-size: 2.4rem;
     font-weight: 800;
 }
+
 .bgs-stat-lbl {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -857,6 +861,7 @@ document.addEventListener('click', function(e) {
     letter-spacing: 0.05em;
     margin-top: 0.3rem;
 }
+
 .bgs-stat-sub {
     color: rgba(143,164,216,0.7);
     font-family: 'Inter', sans-serif;
@@ -864,21 +869,21 @@ document.addEventListener('click', function(e) {
     margin-top: 0.2rem;
 }
 
-/* ============================================================
-   SLIDE 4 — Montessori
-============================================================ */
+/* SLIDE 4 */
 .bgs-slide-4 {
     background: linear-gradient(135deg, #fff1ee 0%, #fff7f5 45%, #ffe8e3 100%);
 }
+
 .bgs-badge-mont {
     background: rgba(229,57,53,0.09);
     border: 1px solid rgba(229,57,53,0.18);
     color: #c84b41;
 }
-.bgs-slide-4 h1       { color: #7d1f1f; }
-.bgs-slide-4 h1 span  { color: #e53935; font-style: normal; }
-.bgs-slide-4 p        { color: #5c4a4a; }
-.bgs-slide-4 strong   { color: #a12d2d; }
+
+.bgs-slide-4 h1 { color: #7d1f1f; }
+.bgs-slide-4 h1 span { color: #e53935; font-style: normal; }
+.bgs-slide-4 p { color: #5c4a4a; }
+.bgs-slide-4 strong { color: #a12d2d; }
 
 .bgs-mont-rule {
     width: 44px;
@@ -887,17 +892,6 @@ document.addEventListener('click', function(e) {
     border-radius: 999px;
     margin: 0.6rem 0 0.9rem;
 }
-.bgs-mont-affil {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #8a5a52;
-    background: rgba(229,57,53,0.06);
-    padding: 0.3rem 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
 
 .bgs-pills {
     display: flex;
@@ -905,6 +899,7 @@ document.addEventListener('click', function(e) {
     gap: 0.5rem;
     margin-top: 1.1rem;
 }
+
 .bgs-pills span {
     background: #e53935;
     color: #ffffff;
@@ -915,30 +910,86 @@ document.addEventListener('click', function(e) {
     border-radius: 40px;
 }
 
-/* Montessori image grid */
-.bgs-mont-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.9rem;
-    width: 100%;
-    align-items: start;
+/* ============================================================
+SLIDE 4 — FIXED 2 IMAGE LAYOUT
+============================================================ */
+
+.bgs-mont-images{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+
+    width:100%;
+    height:100%;
+
+    align-self:stretch;
 }
-.bgs-mont-img {
-    border-radius: 16px;
-    background-color: #fff8f6;
-    border: 2px dashed rgba(229,57,53,0.22);
-    min-height: 140px;
-    background-size: cover;
-    background-position: center;
+
+.bgs-mont-img{
+    flex:1;
+
+    width:100%;
+    min-height:260px;
+
+    border-radius:22px;
+    overflow:hidden;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border:1px solid rgba(229,57,53,0.12);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
-.bgs-mont-wide {
-    grid-column: span 2;
-    min-height: 160px;
+
+/* MOBILE */
+
+@media(max-width:640px){
+
+    .bgs-mont-images{
+        display:none;
+    }
+
 }
 
 /* ============================================================
-   NAVIGATION DOTS + ARROWS
+   ✅ FIXED ARROWS — vertically centred on all screens
 ============================================================ */
+.bgs-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(5px);
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 1rem;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 1000;
+
+    transition: background 0.2s;
+    pointer-events: auto;
+}
+
+.bgs-arrow:hover { background: rgba(0,0,0,0.55); }
+.bgs-prev { left: 14px; }
+.bgs-next { right: 14px; }
+
+/* DOTS */
 .bgs-dots {
     position: absolute;
     bottom: 22px;
@@ -946,8 +997,9 @@ document.addEventListener('click', function(e) {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 20;
+    z-index: 999;
 }
+
 .bgs-dot {
     width: 8px;
     height: 8px;
@@ -958,200 +1010,449 @@ document.addEventListener('click', function(e) {
     border: none;
     padding: 0;
 }
+
 .bgs-dot-active {
     background: #f5a623;
     width: 24px;
     border-radius: 10px;
 }
 
-.bgs-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(5px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    z-index: 20;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: background 0.2s;
-    line-height: 1;
-}
-.bgs-arrow:hover { background: rgba(0,0,0,0.55); }
-.bgs-prev { left: 20px; }
-.bgs-next { right: 20px; }
-
 /* ============================================================
-   RESPONSIVE — Tablet
+   RESPONSIVE
 ============================================================ */
 @media (max-width: 960px) {
     .bgs-slide {
         padding-left: 4vw;
         padding-right: 4vw;
     }
+
     .bgs-inner,
     .bgs-z-default,
     .bgs-z-reverse {
         flex-direction: column;
+        align-items: flex-start;
         gap: 2.5rem;
         padding-top: 4rem;
         padding-bottom: 3.5rem;
     }
+
+    .bgs-z-reverse {
+        flex-direction: column-reverse;
+    }
+
     .bgs-text,
     .bgs-media {
         width: 100%;
         flex: none;
     }
-    .bgs-podium { justify-content: center; }
-    .bgs-stats-grid { grid-template-columns: 1fr 1fr; }
+
+    .bgs-media {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* On tablet, side-by-side 2 images */
+    .bgs-mont-images {
+        flex-direction: row;
+        align-self: auto;
+    }
+
+    .bgs-mont-img {
+        min-height: 200px;
+    }
 }
 
-/* ============================================================
-   RESPONSIVE — Mobile
-============================================================ */
 @media (max-width: 640px) {
     .bgs-slide {
         padding-left: 5vw;
         padding-right: 5vw;
         min-height: auto;
+        overflow: visible;
     }
-   .bgs-inner {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-    gap: 2.2rem;
-    align-items: center;
+
+    .bgs-inner {
+        padding-top: 4.9rem;
+        padding-bottom: 5.5rem;
+        gap: 2.2rem;
+        align-items: stretch;
+    }
+
+    .bgs-slide h1 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+        line-height: 1.05;
+        margin-bottom: 1.1rem;
+    }
+
+    .bgs-slide p {
+        font-size: 0.98rem;
+        line-height: 1.65;
+        max-width: 100%;
+    }
+
+    .bgs-badge {
+        font-size: 0.62rem;
+        line-height: 1.3;
+        padding: 0.38rem 0.9rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    .bgs-ssc-tag {
+        font-size: 0.68rem;
+        line-height: 1.25;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bgs-text {
+        width: 100%;
+        text-align: left;
+    }
+
+    .bgs-media {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bgs-curr-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bgs-curr-card.bgs-full {
+        grid-column: span 1;
+    }
+
+    .bgs-highlights span {
+        font-size: 0.68rem;
+    }
+
+    /* Slide 2 mobile */
+    .bgs-slide-2 .bgs-podium {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.1rem;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .bgs-slide-2 .bgs-topper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        column-gap: 1rem;
+        align-items: center;
+        text-align: left;
+        padding: 1.25rem 1rem;
+    }
+
+    .bgs-slide-2 .bgs-gold { order: 1; transform: none; }
+    .bgs-slide-2 .bgs-silver { order: 2; }
+    .bgs-slide-2 .bgs-bronze { order: 3; }
+
+    .bgs-slide-2 .bgs-rank {
+        left: 1rem;
+        top: 1rem;
+        transform: none;
+    }
+
+    .bgs-slide-2 .bgs-photo,
+    .bgs-slide-2 .bgs-gold .bgs-photo {
+        grid-row: span 3;
+        width: 82px;
+        height: 82px;
+        margin: 0;
+    }
+
+    .bgs-slide-2 .bgs-topper h3 {
+        font-size: 1rem;
+        line-height: 1.25;
+        margin-bottom: 0.1rem;
+    }
+
+    .bgs-slide-2 .bgs-topper h4 {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    .bgs-slide-2 .bgs-topper p {
+        font-size: 0.72rem;
+    }
+
+    /* Slide 3 mobile */
+    .bgs-slide-3 .bgs-inner {
+        flex-direction: column-reverse;
+    }
+
+    .bgs-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .bgs-stat {
+        padding: 1.1rem 0.7rem;
+    }
+
+    .bgs-stat-num {
+        font-size: 2rem;
+    }
+
+    .bgs-stat-sub {
+        font-size: 0.66rem;
+    }
+
+    /* Slide 4 mobile — show images stacked */
+    .bgs-mont-images {
+        flex-direction: column;
+        align-self: auto;
+    }
+
+    .bgs-mont-img {
+        min-height: 140px;
+        flex: none;
+    }
+
+    .bgs-pills span {
+        font-size: 0.68rem;
+        line-height: 1.35;
+        width: 100%;
+        text-align: center;
+    }
+
+    .bgs-mont-btn {
+        margin-top: 1rem;
+    }
+
+    /* ✅ Arrows stay centred on mobile too */
+    .bgs-arrow {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        bottom: auto !important;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .bgs-prev { left: 10px !important; }
+    .bgs-next { right: 10px !important; }
+
+    .bgs-dots {
+        bottom: 16px !important;
+    }
 }
 
-.bgs-text {
-    text-align: left;
+@media (max-width: 390px) {
+    .bgs-inner {
+        padding-top: 4.4rem;
+    }
+
+    .bgs-slide h1 {
+        font-size: 2.05rem;
+    }
+
+    .bgs-slide p {
+        font-size: 0.93rem;
+    }
+
+    .bgs-slide-2 .bgs-topper {
+        grid-template-columns: 78px 1fr;
+    }
+
+    .bgs-slide-2 .bgs-photo,
+    .bgs-slide-2 .bgs-gold .bgs-photo {
+        width: 72px;
+        height: 72px;
+    }
 }
 
-.bgs-media {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Mobile hero height fix */
+@media (max-width: 640px) {
+    .bgs-hero-slider {
+        overflow: hidden;
+    }
 
+    .bgs-slides-track {
+        align-items: flex-start !important;
+    }
 
-    .bgs-slide h1 { font-size: 2rem; }
-    .bgs-podium { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-    .bgs-topper { max-width: 140px; }
-    .bgs-stats-grid { grid-template-columns: 1fr 1fr; }
-    .bgs-mont-images { grid-template-columns: 1fr; }
-    .bgs-mont-wide { grid-column: span 1; }
-    .bgs-curr-grid { grid-template-columns: 1fr; }
-    .bgs-curr-card.bgs-full { grid-column: span 1; }
-    .bgs-arrow { width: 36px; height: 36px; font-size: 1rem; }
-    .bgs-prev { left: 10px; }
-    .bgs-next { right: 10px; }
+    .bgs-slide {
+        min-height: 0 !important;
+        height: auto !important;
+        align-items: flex-start !important;
+    }
+
+    .bgs-inner {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    .bgs-slide-2 .bgs-inner,
+    .bgs-slide-3 .bgs-inner,
+    .bgs-slide-4 .bgs-inner {
+        padding-bottom: 4.8rem !important;
+    }
+
+    .bgs-slide-2 .bgs-text,
+    .bgs-slide-3 .bgs-text,
+    .bgs-slide-4 .bgs-text {
+        margin-bottom: 0 !important;
+    }
+
+    .bgs-slide-2 .bgs-media,
+    .bgs-slide-3 .bgs-media {
+        margin-top: 0 !important;
+    }
+
+    .bgs-slide-2 .bgs-podium {
+        margin-top: 0 !important;
+    }
 }
 </style>
 
 <script>
 (function() {
-    var track   = document.getElementById('bgsSlidesTrack');
-    var slider  = document.getElementById('bgsHeroSlider');
+    var track = document.getElementById('bgsSlidesTrack');
+    var slider = document.getElementById('bgsHeroSlider');
     var prevBtn = document.getElementById('bgsPrevBtn');
     var nextBtn = document.getElementById('bgsNextBtn');
-    var dots    = slider.querySelectorAll('.bgs-dot');
 
-    var total = 4;
+    if (!track || !slider || !prevBtn || !nextBtn) return;
+
+    var dots = slider.querySelectorAll('.bgs-dot');
+    var slides = slider.querySelectorAll('.bgs-slide');
+    var total = slides.length;
     var current = 0;
     var autoTimer = null;
-    var userInteracted = false;
-    var restartTimeout = null;
+    var restartTimer = null;
+    var isPaused = false;
+    var touchStartX = 0;
+    var touchStartY = 0;
+
+    function updateHeroHeight() {
+        if (window.innerWidth <= 640) {
+            var activeSlide = slides[current];
+            if (!activeSlide) return;
+            requestAnimationFrame(function() {
+                var h = activeSlide.scrollHeight;
+                slider.style.height = h + 'px';
+                track.style.height = h + 'px';
+            });
+        } else {
+            slider.style.height = '';
+            track.style.height = '';
+        }
+    }
 
     function goTo(index) {
         current = (index + total) % total;
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach(function(d, i) {
-            if (i === current) {
-                d.classList.add('bgs-dot-active');
-            } else {
-                d.classList.remove('bgs-dot-active');
-            }
+
+        dots.forEach(function(dot, i) {
+            dot.classList.toggle('bgs-dot-active', i === current);
         });
+
+        updateHeroHeight();
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
+    function nextSlide() { goTo(current + 1); }
+    function prevSlide() { goTo(current - 1); }
 
     function startAuto() {
-        if (autoTimer) clearInterval(autoTimer);
-        if (!userInteracted) {
-            autoTimer = setInterval(next, 5500);
+        clearInterval(autoTimer);
+        if (!isPaused) {
+            autoTimer = setInterval(nextSlide, 5000);
         }
     }
 
     function stopAuto() {
-        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+        clearInterval(autoTimer);
+        autoTimer = null;
     }
 
-    function handleInteraction() {
-        userInteracted = true;
+    function pauseSlider() {
+        isPaused = true;
         stopAuto();
-        if (restartTimeout) clearTimeout(restartTimeout);
-        restartTimeout = setTimeout(function() {
-            userInteracted = false;
-            startAuto();
-        }, 8000);
     }
 
-    /* Click / hold detection */
-    var holdTimer = null;
-    function startHold() { holdTimer = setTimeout(handleInteraction, 100); }
-    function endHold()   { if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; } }
+    function resumeSlider() {
+        isPaused = false;
+        startAuto();
+    }
 
-    slider.addEventListener('mousedown',  startHold);
-    slider.addEventListener('mouseup',    endHold);
-    slider.addEventListener('mouseleave', function() { endHold(); if (!userInteracted) startAuto(); });
-    slider.addEventListener('touchstart', startHold, { passive: true });
-    slider.addEventListener('touchend',   endHold);
-    slider.addEventListener('touchcancel',endHold);
+    function pauseThenResume() {
+        pauseSlider();
+        clearTimeout(restartTimer);
+        restartTimer = setTimeout(resumeSlider, 5000);
+    }
 
-    nextBtn.addEventListener('click', function() { next(); handleInteraction(); startAuto(); });
-    prevBtn.addEventListener('click', function() { prev(); handleInteraction(); startAuto(); });
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        nextSlide();
+        pauseThenResume();
+    });
 
-    dots.forEach(function(d) {
-        d.addEventListener('click', function() {
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        prevSlide();
+        pauseThenResume();
+    });
+
+    dots.forEach(function(dot) {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             goTo(parseInt(this.getAttribute('data-index'), 10));
-            handleInteraction();
-            startAuto();
+            pauseThenResume();
         });
     });
 
-    /* Pause on any card/link click */
-    var clickables = slider.querySelectorAll('a, .bgs-curr-card, .bgs-topper, .bgs-stat, .bgs-mont-img');
-    clickables.forEach(function(el) {
-        el.addEventListener('click', handleInteraction);
-        el.addEventListener('touchstart', handleInteraction);
-    });
+    slider.addEventListener('mouseenter', pauseSlider);
+    slider.addEventListener('mouseleave', resumeSlider);
 
-    /* Swipe support */
-    var touchStartX = 0;
     slider.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    slider.addEventListener('touchend', function(e) {
-        var diff = touchStartX - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) { next(); } else { prev(); }
-            handleInteraction();
-            startAuto();
-        }
+        touchStartY = e.changedTouches[0].screenY;
+        pauseSlider();
     }, { passive: true });
 
+    slider.addEventListener('touchend', function(e) {
+        var touchEndX = e.changedTouches[0].screenX;
+        var touchEndY = e.changedTouches[0].screenY;
+        var diffX = touchStartX - touchEndX;
+        var diffY = touchStartY - touchEndY;
+
+        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+
+        clearTimeout(restartTimer);
+        restartTimer = setTimeout(resumeSlider, 5000);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateHeroHeight);
+    window.addEventListener('orientationchange', function() {
+        setTimeout(updateHeroHeight, 250);
+    });
+    window.addEventListener('load', updateHeroHeight);
+
+    goTo(0);
+    setTimeout(updateHeroHeight, 250);
     startAuto();
 })();
 </script>
+
+</div>
 
 
 <!-- FOUNDER MESSAGE -->
@@ -2168,19 +2469,21 @@ document.addEventListener('click', function(e) {
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
-        .about-img-small {
-            border-radius: 14px;
-            overflow: hidden;
-            background: #1a2460;
-            border: 1px solid rgba(255,255,255,0.08);
-            aspect-ratio: 4 / 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .about-img-small .img-placeholder {
-            min-height: 160px;
-        }
+.about-img-small {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1a2460;
+    border: 1px solid rgba(255,255,255,0.08);
+    aspect-ratio: 4 / 3;
+    position: relative;
+}
+
+.about-img-small img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
 
         /* =============================================
            RESPONSIVE
@@ -2282,118 +2585,80 @@ document.addEventListener('click', function(e) {
         <img src="images/groupimage.jpeg" alt="British Grammar School Secunderabad students during a school activity">
     </div>
 
-    <!-- Two smaller photos -->
-    <div class="about-img-row">
+<!-- Two smaller photos -->
+<div class="about-img-row">
 
-        <div class="about-img-small">
-            <div class="img-placeholder">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-                <span>Add School Building Photo</span>
-            </div>
-        </div>
-
-        <div class="about-img-small">
-            <div class="img-placeholder">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-                <span>Add Classroom Photo</span>
-            </div>
-        </div>
-
+    <div class="about-img-small">
+        <img src="images/second.jpeg" alt="British Grammar School Building">
     </div>
+
+    <div class="about-img-small">
+        <img src="images/third.jpeg" alt="British Grammar School Classroom">
+    </div>
+
+</div>
 
 </div>
 
     </div>
 </section>
 
-<!--why us-->
+
+
+<!-- WHY CHOOSE US -->
 
 <section class="why-section" id="why-choose-us" aria-label="Why choose British Grammar School Secunderabad">
   <div class="why-container">
 
-    <!-- Z-PATTERN: Image grid on TOP RIGHT, text flows bottom-left naturally -->
-    <div class="why-top">
+    <div class="why-intro">
+      <div class="why-badge">WHY CHOOSE US</div>
 
-      <!-- LEFT TEXT -->
-      <div class="why-text">
-        <div class="why-badge">WHY CHOOSE US</div>
+      <h2 class="why-heading">
+        A Complete Learning Environment for <span>Academic & Personal Growth</span>
+      </h2>
 
-        <h2 class="why-heading">
-          Everything Your<br>
-          Child<br>
-          Needs to <span>Learn,<br>Grow & Succeed</span>
-        </h2>
+      <div class="why-line"></div>
 
-        <div class="why-line"></div>
-
-        <p>
-          At British Grammar School, Secunderabad, we believe every child deserves an environment that inspires confidence, creativity, discipline, and academic excellence. Our school combines strong SSC academics with holistic development to help students become future-ready learners and responsible individuals.
-        </p>
-
-        <p>
-          As one of the leading SSC schools in Secunderabad, we focus on conceptual learning, communication skills, leadership, creativity, sports, and character building. From LKG to Class 10, students receive personalized attention from experienced faculty in a safe and nurturing learning environment.
-        </p>
-
-        <p>
-          Through smart classrooms, co-curricular activities, sports programs, arts, cultural events, and technology-integrated education, we ensure every child develops the confidence and practical skills needed for lifelong success.
-        </p>
-
-        <p>
-          Our mission is to create a positive and engaging atmosphere where students are encouraged to explore their talents, think independently, and grow into compassionate global citizens prepared for the future.
-        </p>
-      </div>
-
-      <!-- RIGHT IMAGE GRID - now positioned on the TOP RIGHT following Z-pattern -->
-      <div class="why-images">
-
-        <div class="image-card">
-          <div class="image-area academics-img"></div>
-          <div class="image-content">
-            <div class="round-icon">📖</div>
-            <h3>Add Academics Image</h3>
-            <p>Classrooms, Learning, Teachers</p>
-          </div>
-        </div>
-
-        <div class="image-card">
-          <div class="image-area sports-img"></div>
-          <div class="image-content">
-            <div class="round-icon">🏆</div>
-            <h3>Add Sports Image</h3>
-            <p>Sports, Games, Activities</p>
-          </div>
-        </div>
-
-        <div class="image-card">
-          <div class="image-area culture-img"></div>
-          <div class="image-content">
-            <div class="round-icon">🎵</div>
-            <h3>Add Arts & Culture Image</h3>
-            <p>Music, Dance, Art, Events</p>
-          </div>
-        </div>
-
-        <div class="image-card">
-          <div class="image-area communication-img"></div>
-          <div class="image-content">
-            <div class="round-icon">👥</div>
-            <h3>Add Communication Image</h3>
-            <p>Teachers, Parents, Interaction</p>
-          </div>
-        </div>
-
-      </div>
+      <p>
+        <strong>British Grammar School, Secunderabad</strong> is a trusted SSC school offering quality education from LKG to Class 10. We combine strong academics, experienced teachers, value-based learning, and holistic development to help every child grow with confidence, discipline, creativity, and purpose.
+      </p>
     </div>
 
-    <!-- BOTTOM FEATURE CARDS -->
+    <div class="why-z-grid">
+
+      <article class="why-info why-info-dark">
+        <span>01</span>
+        <h3>Strong SSC Academic Foundation</h3>
+        <p>
+          Our Telangana SSC curriculum focuses on conceptual understanding, regular practice, exam readiness, and strong fundamentals in languages, mathematics, science, and social studies.
+        </p>
+      </article>
+
+      <article class="why-info">
+        <span>02</span>
+        <h3>Holistic Student Development</h3>
+        <p>
+          Students are encouraged to participate in sports, arts, cultural activities, communication-building tasks, leadership opportunities, and creative learning experiences.
+        </p>
+      </article>
+
+      <article class="why-info">
+        <span>03</span>
+        <h3>Safe & Supportive School Environment</h3>
+        <p>
+          From LKG to Class 10, every child receives personal attention in a caring environment where teachers support academic progress, emotional growth, confidence, and discipline.
+        </p>
+      </article>
+
+      <article class="why-info why-info-dark">
+        <span>04</span>
+        <h3>Future-Ready Education</h3>
+<p>
+  Beyond academics, we help students develop confidence, communication skills, creativity, leadership qualities, discipline, and critical thinking to prepare them for future opportunities and real-world success.
+</p>
+
+    </div>
+
     <div class="why-cards">
 
       <div class="why-card">
@@ -2430,228 +2695,632 @@ document.addEventListener('click', function(e) {
 </section>
 
 <style>
-  * {
-    box-sizing: border-box;
+.why-section {
+  width: 100%;
+  padding: 70px 60px;
+  background: linear-gradient(135deg, #fffaf2 0%, #ffffff 48%, #f3f8ff 100%);
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.why-intro {
+  max-width: 1200px;
+  margin-bottom: 46px;
+}
+
+.why-badge {
+  display: inline-block;
+  background: #071f6b;
+  color: #f5a623;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.why-heading {
+  font-family: 'Playfair Display', serif;
+  color: #071f6b;
+
+  font-size: clamp(3rem, 7vw, 6.2rem);
+
+  line-height: 1.02;
+  font-weight: 800;
+
+  margin: 0;
+
+  max-width: 1300px;
+  letter-spacing: -0.03em;
+}
+
+.why-heading span {
+  color: #f5a623;
+}
+
+.why-line,
+.card-line {
+  width: 52px;
+  height: 4px;
+  background: #f5a623;
+  border-radius: 999px;
+}
+
+.why-line {
+  margin: 26px 0;
+}
+
+.why-intro p {
+  color: #1f3769;
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 500;
+
+  max-width: 1150px;
+
+  margin: 0;
+}
+
+.why-intro strong {
+  color: #071f6b;
+}
+
+.why-z-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 34px;
+  align-items: stretch;
+}
+
+.why-info {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 34px 32px;
+  border: 1px solid rgba(7,31,107,0.08);
+  box-shadow: 0 14px 34px rgba(7,31,107,0.07);
+}
+
+.why-info-dark {
+  background: #071f6b;
+}
+
+.why-info span {
+  display: inline-block;
+  color: #f5a623;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.why-info h3 {
+  font-family: 'Playfair Display', serif;
+  color: #071f6b;
+  font-size: 1.7rem;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.why-info p {
+  color: #40537c;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.why-info-dark h3 {
+  color: #ffffff;
+}
+
+.why-info-dark p {
+  color: #c8d4f5;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 70px;
+}
+
+.why-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 34px 28px;
+  min-height: 300px;
+  box-shadow: 0 18px 40px rgba(7,31,107,0.09);
+  border: 1px solid rgba(7,31,107,0.07);
+}
+
+.why-card-icon {
+  width: 62px;
+  height: 62px;
+  background: #071f6b;
+  color: #f5a623;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.why-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #071f6b;
+  font-size: 27px;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.card-line {
+  width: 42px;
+  height: 3px;
+  margin-bottom: 20px;
+}
+
+.why-card p {
+  color: #40537c;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .why-z-grid {
+    grid-template-columns: 1fr;
   }
 
-  .why-section {
-    width: 100%;
-    padding: 55px 60px;
-    background: linear-gradient(135deg, #fffaf2 0%, #ffffff 50%, #f3f8ff 100%);
-    font-family: 'DM Sans', sans-serif;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .why-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
-  /* Z-PATTERN: Image grid naturally sits on the right, text on left - perfect Z flow */
-  .why-top {
-    display: grid;
-    grid-template-columns: 0.85fr 1fr;
-    gap: 70px;
-    align-items: center;
-  }
-
-  .why-badge {
-    display: inline-block;
-    background: #071f6b;
-    color: #f5a623;
-    padding: 11px 22px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 28px;
-  }
-
-  .why-heading {
-    font-family: 'Playfair Display', serif;
-    color: #071f6b;
-    font-size: clamp(3rem, 5vw, 5.1rem);
-    line-height: 1.08;
-    font-weight: 800;
-    margin: 0;
-  }
-
-  .why-heading span {
-    color: #f5a623;
-  }
-
-  .why-line,
-  .card-line {
-    width: 52px;
-    height: 4px;
-    background: #f5a623;
-    border-radius: 999px;
-  }
-
-  .why-line {
-    margin: 28px 0;
-  }
-
-  .why-text p {
-    color: #1f3769;
-    font-size: 15.5px;
-    line-height: 1.85;
-    font-weight: 500;
-    margin: 0 0 18px;
-    max-width: 640px;
-  }
-
-  .why-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    align-self: center;
-  }
-
-  .image-card {
-    background: #eef5ff;
-    border: 1.5px dashed rgba(7, 31, 107, 0.35);
-    border-radius: 16px;
-    overflow: hidden;
-    min-height: 280px;
-    box-shadow: 0 14px 35px rgba(7, 31, 107, 0.08);
-  }
-
-  .image-area {
-    height: 190px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .academics-img {
-    background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80');
-  }
-
-  .sports-img {
-    background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80');
-  }
-
-  .culture-img {
-    background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=800&q=80');
-  }
-
-  .communication-img {
-    background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80');
-  }
-
-  .image-content {
-    background: #f5f9ff;
-    text-align: center;
-    padding: 0 18px 24px;
-    position: relative;
-  }
-
-  .round-icon {
-    width: 64px;
-    height: 64px;
-    background: #071f6b;
-    color: #f5a623;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: -32px auto 16px;
-    font-size: 26px;
-    box-shadow: 0 8px 20px rgba(7, 31, 107, 0.22);
-  }
-
-  .image-content h3 {
-    font-family: 'Playfair Display', serif;
-    color: #071f6b;
-    font-size: 22px;
-    margin: 0 0 8px;
-  }
-
-  .image-content p {
-    color: #40537c;
-    font-size: 14px;
-    margin: 0;
+  .why-info:nth-child(2),
+  .why-info:nth-child(3) {
+    transform: none;
   }
 
   .why-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 35px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 650px) {
+  .why-section {
+    padding: 56px 20px;
+  }
+
+  .why-heading {
+    font-size: 2.55rem;
+  }
+
+  .why-intro {
+    margin-bottom: 30px;
+  }
+
+  .why-z-grid,
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .why-info,
+  .why-card {
+    padding: 28px 22px;
   }
 
   .why-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 34px 28px;
-    min-height: 300px;
-    box-shadow: 0 18px 40px rgba(7, 31, 107, 0.09);
-    border: 1px solid rgba(7, 31, 107, 0.07);
+    min-height: auto;
   }
-
-  .why-card-icon {
-    width: 62px;
-    height: 62px;
-    background: #071f6b;
-    color: #f5a623;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    margin-bottom: 24px;
-  }
-
-  .why-card h3 {
-    font-family: 'Playfair Display', serif;
-    color: #071f6b;
-    font-size: 27px;
-    line-height: 1.15;
-    margin: 0 0 14px;
-  }
-
-  .card-line {
-    width: 42px;
-    height: 3px;
-    margin-bottom: 20px;
-  }
-
-  .why-card p {
-    color: #40537c;
-    font-size: 15px;
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  @media (max-width: 1100px) {
-    .why-top {
-      grid-template-columns: 1fr;
-      gap: 50px;
-    }
-
-    .why-cards {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 650px) {
-    .why-section {
-      padding: 50px 20px;
-    }
-
-    .why-images,
-    .why-cards {
-      grid-template-columns: 1fr;
-    }
-
-    .why-heading {
-      font-size: 2.8rem;
-    }
-  }
+}
 </style>
+  
+<!-- CAMPUS GALLERY SECTION -->
+
+<section class="gallery-section" id="campus-gallery">
+  <div class="gallery-container">
+
+    <div class="gallery-header">
+      <h2>Campus Gallery</h2>
+      <p>Explore the vibrant moments and beautiful spaces of British Grammar School</p>
+    </div>
+
+    <div class="year-tabs">
+      <button class="year-tab active" data-year="2026">2026</button>
+      <button class="year-tab" data-year="2025">2025</button>
+    </div>
+
+    <div class="carousel-wrapper">
+
+      <div class="carousel" id="carousel"></div>
+
+      <button class="carousel-nav prev" id="prevBtn" type="button">&#10094;</button>
+      <button class="carousel-nav next" id="nextBtn" type="button">&#10095;</button>
+
+      <div class="slide-counter">
+        <span id="slideCounter">1</span> / <span id="slideTotalCounter">10</span>
+      </div>
+
+    </div>
+
+    <div class="carousel-thumbnails" id="thumbnails"></div>
+
+  </div>
+</section>
+
+<style>
+.gallery-section {
+  width: 100%;
+  background: linear-gradient(135deg, #0a1128 0%, #1a2847 100%);
+  padding: 70px 20px 95px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.gallery-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  color: #ffffff;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.gallery-header p {
+  font-size: 17px;
+  color: #b0b8cc;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.year-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 42px;
+  flex-wrap: wrap;
+}
+
+.year-tab {
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid #f5a623;
+  background: transparent;
+  color: #f5a623;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.year-tab.active,
+.year-tab:hover {
+  background: #f5a623;
+  color: #0f1e5c;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 22px 65px rgba(0,0,0,0.38);
+  background: #071124;
+}
+
+.carousel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  height: 520px;
+  background: #071124;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #071124;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(245,166,35,0.95);
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.carousel-nav:hover {
+  background: #f5a623;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav.prev {
+  left: 20px;
+}
+
+.carousel-nav.next {
+  right: 20px;
+}
+
+.slide-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.65);
+  color: #f5a623;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 40;
+}
+
+.carousel-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 90px;
+  padding: 0 14px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 72px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.25s ease;
+  opacity: 0.65;
+  overflow: hidden;
+  background: #17305f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail.active {
+  border-color: #f5a623;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.thumbnail:hover {
+  opacity: 0.9;
+}
+
+.thumbnail-number {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b8cc;
+  font-size: 15px;
+  font-weight: 700;
+  background: #17305f;
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 55px 16px 75px;
+  }
+
+  .carousel-slide {
+    height: 360px;
+  }
+
+  .carousel-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .carousel-nav.prev {
+    left: 10px;
+  }
+
+  .carousel-nav.next {
+    right: 10px;
+  }
+
+  .carousel-thumbnails {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 70px;
+  }
+
+  .thumbnail {
+    height: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .gallery-header p {
+    font-size: 15px;
+  }
+
+  .carousel-slide {
+    height: 260px;
+  }
+
+  .carousel-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+  }
+
+  .thumbnail {
+    height: 54px;
+  }
+
+  .slide-counter {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  let currentSlide = 0;
+  let currentYear = "2026";
+
+  const imageData = {
+    "2026": [
+      "images/2026/1.jpeg",
+      "images/2026/2.jpeg",
+      "images/2026/3.jpeg",
+      "images/2026/4.jpeg",
+      "images/2026/5.jpeg",
+      "images/2026/6.jpeg",
+      "images/2026/7.jpeg",
+      "images/2026/8.jpeg",
+      "images/2026/9.jpeg",
+      "images/2026/10.jpeg"
+    ],
+    "2025": [
+      "images/2025/1.jpeg",
+      "images/2025/2.jpeg",
+      "images/2025/3.jpeg",
+      "images/2025/4.jpeg",
+      "images/2025/5.jpeg",
+      "images/2025/6.jpeg",
+      "images/2025/7.jpeg",
+      "images/2025/8.jpeg",
+      "images/2025/9.jpeg",
+      "images/2025/10.jpeg"
+    ]
+  };
+
+  const carousel = document.getElementById("carousel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const slideCounter = document.getElementById("slideCounter");
+  const slideTotalCounter = document.getElementById("slideTotalCounter");
+  const thumbnails = document.getElementById("thumbnails");
+  const yearTabs = document.querySelectorAll(".year-tab");
+
+  function renderSlides() {
+    carousel.innerHTML = "";
+
+    imageData[currentYear].forEach(function (src, index) {
+      const slide = document.createElement("div");
+      slide.className = "carousel-slide";
+
+      slide.innerHTML = `
+        <img src="${src}" alt="British Grammar School campus gallery ${currentYear} image ${index + 1}">
+      `;
+
+      carousel.appendChild(slide);
+    });
+  }
+
+  function renderThumbnails() {
+    thumbnails.innerHTML = "";
+
+    imageData[currentYear].forEach(function (_, index) {
+      const thumb = document.createElement("div");
+      thumb.className = "thumbnail" + (index === currentSlide ? " active" : "");
+
+      thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
+
+      thumb.addEventListener("click", function () {
+        currentSlide = index;
+        updateCarousel();
+      });
+
+      thumbnails.appendChild(thumb);
+    });
+  }
+
+  function updateCarousel() {
+    carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
+
+    slideCounter.textContent = currentSlide + 1;
+    slideTotalCounter.textContent = imageData[currentYear].length;
+
+    document.querySelectorAll(".thumbnail").forEach(function (thumb, index) {
+      thumb.classList.toggle("active", index === currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % imageData[currentYear].length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
+    updateCarousel();
+  }
+
+  function changeYear(year) {
+    currentYear = year;
+    currentSlide = 0;
+
+    yearTabs.forEach(function (tab) {
+      tab.classList.toggle("active", tab.dataset.year === year);
+    });
+
+    renderSlides();
+    renderThumbnails();
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  yearTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      changeYear(tab.dataset.year);
+    });
+  });
+
+  renderSlides();
+  renderThumbnails();
+  updateCarousel();
+})();
+</script>
+
 
 <!-- ADMISSIONS SECTION -->
 
