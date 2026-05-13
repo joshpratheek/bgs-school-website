@@ -2947,25 +2947,32 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 .carousel-wrapper {
   position: relative;
   width: 100%;
+  overflow: hidden;
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
+
 }
 
 .carousel {
   display: flex;
   width: 100%;
-  transition: transform 0.35s ease;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  /* GLITCH FIX: Prevent scroll behavior during transition */
+  scroll-behavior: auto;
 }
 
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  touch-action: pan-y;
-
-  pointer-events: none;
+.carousel-slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  height: 520px;
+  background: #071124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* GLITCH FIX: Fixed height prevents layout shift */
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .carousel-slide img {
@@ -3162,6 +3169,7 @@ html {
 (function () {
   let currentSlide = 0;
   let currentYear = "2026";
+  let isTransitioning = false;
 
   const imageData = {
     "2026": [
@@ -3208,8 +3216,13 @@ html {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "British Grammar School campus gallery " + currentYear + " image " + (index + 1);
-      img.loading = "lazy";
-      img.draggable = false;
+      
+      // GLITCH FIX: Prevent image load from triggering scroll
+      img.style.display = "block";
+      img.addEventListener("load", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
 
       slide.appendChild(img);
       carousel.appendChild(slide);
@@ -3220,14 +3233,16 @@ html {
     thumbnails.innerHTML = "";
 
     imageData[currentYear].forEach(function (_, index) {
-      const thumb = document.createElement("button");
-      thumb.type = "button";
+      const thumb = document.createElement("div");
       thumb.className = "thumbnail" + (index === currentSlide ? " active" : "");
-      thumb.innerHTML = `<span class="thumbnail-number">${index + 1}</span>`;
+
+      thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
 
       thumb.addEventListener("click", function () {
-        currentSlide = index;
-        updateCarousel();
+        if (!isTransitioning) {
+          currentSlide = index;
+          updateCarousel();
+        }
       });
 
       thumbnails.appendChild(thumb);
@@ -3235,7 +3250,13 @@ html {
   }
 
   function updateCarousel() {
-    carousel.style.transform = "translate3d(-" + currentSlide * 100 + "%, 0, 0)";
+    if (isTransitioning) return;
+    
+    isTransitioning = true;
+    
+    
+    
+    carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
     slideCounter.textContent = currentSlide + 1;
     slideTotalCounter.textContent = imageData[currentYear].length;
@@ -3243,19 +3264,27 @@ html {
     document.querySelectorAll(".thumbnail").forEach(function (thumb, index) {
       thumb.classList.toggle("active", index === currentSlide);
     });
+
+    setTimeout(function () {
+  isTransitioning = false;
+}, 600);
   }
 
   function nextSlide() {
+    if (isTransitioning) return;
     currentSlide = (currentSlide + 1) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function prevSlide() {
+    if (isTransitioning) return;
     currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
     updateCarousel();
   }
 
   function changeYear(year) {
+    if (isTransitioning) return;
+    
     currentYear = year;
     currentSlide = 0;
 
@@ -3268,22 +3297,28 @@ html {
     updateCarousel();
   }
 
+  // GLITCH FIX: Prevent accidental scrolls
   nextBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
     nextSlide();
   });
 
   prevBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
     prevSlide();
   });
 
   yearTabs.forEach(function (tab) {
     tab.addEventListener("click", function (e) {
       e.preventDefault();
+      e.stopPropagation();
       changeYear(tab.dataset.year);
     });
   });
+
+  
 
   renderSlides();
   renderThumbnails();
