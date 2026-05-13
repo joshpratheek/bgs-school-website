@@ -2947,11 +2947,9 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
-
 }
 
 .carousel {
@@ -2960,17 +2958,14 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
   transition: transform 0.35s ease;
 }
 
-.carousel-slide {
-  min-width: 100%;
-  flex: 0 0 100%;
-  height: 520px;
-  background: #071124;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* GLITCH FIX: Fixed height prevents layout shift */
-  flex-shrink: 0;
-  overflow: hidden;
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  touch-action: pan-y;
+
+  pointer-events: none;
 }
 
 .carousel-slide img {
