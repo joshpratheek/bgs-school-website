@@ -445,15 +445,21 @@
       color: var(--pink);
     }
 
-    .programmes-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
+   .programmes-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+    @media(max-width:960px){
+  .programmes-grid{
+    grid-template-columns:1fr;
+  }
+}
 
     .prog-card {
       background: rgba(255,255,255,0.06);
@@ -942,27 +948,42 @@
     </div>
 
     <div class="programmes-grid">
-      <article class="prog-card">
-        <span class="prog-age">Ages 18 Months – 3 Years</span>
-        <h3>Toddler Community</h3>
-        <p>A gentle and nurturing introduction to early childhood learning where toddlers begin developing independence, communication, coordination, and confidence through structured exploration and guided play.</p>
-        <ul class="prog-list"><li>Practical life activities</li><li>Sensory exploration & movement</li><li>Language & social interaction</li><li>Safe and emotionally secure environment</li></ul>
-      </article>
 
-      <article class="prog-card">
-        <span class="prog-age">Ages 3 – 6 Years</span>
-        <h3>Children’s House</h3>
-        <p>Our Montessori preschool programme helps children build concentration, creativity, independence, and foundational academic skills through hands-on learning and child-led discovery.</p>
-        <ul class="prog-list"><li>Montessori math & language</li><li>Phonics & early literacy</li><li>Arts, music & storytelling</li><li>Kindergarten readiness programme</li></ul>
-      </article>
+  <article class="prog-card">
+    <span class="prog-age">Ages 18 Months – 5 Years</span>
 
-      <article class="prog-card">
-        <span class="prog-age">Ages 6 – 12 Years</span>
-        <h3>Lower Elementary</h3>
-        <p>Children are encouraged to become confident thinkers, independent learners, researchers, and collaborators through deeper academic exploration and experiential learning experiences.</p>
-        <ul class="prog-list"><li>Advanced mathematics & science</li><li>Creative writing & reading</li><li>Project-based learning</li><li>Community & environmental studies</li></ul>
-      </article>
-    </div>
+    <h3>One Kynd Montessori</h3>
+
+    <p>
+      A nurturing early learning programme in Hyderabad designed to build confidence, curiosity, independence, communication skills, and joyful learning through Montessori-inspired activities.
+    </p>
+
+    <ul class="prog-list">
+      <li>Montessori-based early childhood education</li>
+      <li>Phonics, creativity, music and movement</li>
+      <li>Sensorial learning and practical life activities</li>
+      <li>Safe, caring and child-centred environment</li>
+    </ul>
+  </article>
+
+  <article class="prog-card">
+    <span class="prog-age">Ages 5 – 15 Years</span>
+
+    <h3>British Grammar School</h3>
+
+    <p>
+      A trusted SSC school in Secunderabad offering quality education from primary classes to Class 10, with strong academics, experienced faculty, smart classrooms, and holistic student development.
+    </p>
+
+    <ul class="prog-list">
+      <li>Telangana SSC curriculum from primary to Class 10</li>
+      <li>Strong focus on academics and exam readiness</li>
+      <li>Sports, arts, leadership and cultural activities</li>
+      <li>100% SSC board pass results and value-based learning</li>
+    </ul>
+  </article>
+
+</div>
   </section>
 
   <!-- =========================
@@ -987,6 +1008,9 @@
     </div>
   </section>
 
+
+
+
   <!-- =========================
        CTA SECTION
   ========================= -->
@@ -1004,10 +1028,555 @@
     </p>
 
     <div class="cta-btns">
-      <a href="mailto:admissions@britishgrammarschool.in" class="btn-cta">Schedule a Tour →</a>
+      <a href="#contact-us" class="btn-cta">Contact us →</a>
       <a href="#programs" class="btn-cta-ghost">Explore Programs</a>
     </div>
   </section>
+
+
+
+  <!-- =========================
+     CONTACT SECTION
+========================= -->
+
+<section class="contact-section" id="contact-us">
+
+  <div class="contact-inner">
+
+    <div class="contact-eyebrow">Contact us</div>
+
+    <h2 class="contact-title">
+      Visit or Contact One Kynd Montessori
+    </h2>
+
+    <p class="contact-subtitle">
+      We're here to answer all your questions — come meet us in Hyderabad
+    </p>
+
+    <!-- TOP CONTACT CARDS -->
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+
+        <div>
+          <div class="contact-card-label">Address</div>
+
+          <div class="contact-card-value">
+            <a href="https://maps.app.goo.gl/TFvkrmh1gE4bEsLu6" target="_blank">
+              OneKynd Montessori Play School, Hyderabad
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+
+        <div>
+          <div class="contact-card-label">Phone</div>
+
+          <div class="contact-card-value">
+            <a href="tel:+918897493728">
+              +91 8897493728
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+
+        <div>
+          <div class="contact-card-label">Email</div>
+
+          <div class="contact-card-value">
+            <a href="mailto:info@onekynd.in">
+              info@onekynd.in
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">🕘</div>
+
+        <div>
+          <div class="contact-card-label">School hours</div>
+
+          <div class="contact-card-value">
+            Mon – Sat: 9:00 AM – 3:00 PM
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+
+    <div class="map-divider"></div>
+
+    <!-- MAP SECTION -->
+
+    <div class="map-heading-wrap">
+
+      <div class="map-eyebrow">Find Us</div>
+
+      <h3 class="map-title">
+        Visit Our Montessori Campus in Hyderabad
+      </h3>
+
+    </div>
+
+    <div class="map-layout">
+
+      <!-- REAL EMBEDDED MAP -->
+
+      <div class="map-embed">
+
+        <iframe
+          src="https://www.google.com/maps?q=17.4041939,78.4484412&hl=en&z=17&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="One Kynd Montessori Location">
+        </iframe>
+
+      </div>
+
+      <!-- RIGHT INFO CARD -->
+
+      <div class="map-info-card">
+
+        <div class="map-info-title">
+          Campus Information
+        </div>
+
+        <div class="map-info-row">
+
+          <div class="map-info-icon">📍</div>
+
+          <div>
+            <div class="map-info-label">Address</div>
+
+            <div class="map-info-value">
+              OneKynd Montessori Play School<br>
+              Hyderabad, Telangana
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-info-row">
+
+          <div class="map-info-icon">📌</div>
+
+          <div>
+            <div class="map-info-label">Landmark</div>
+
+            <div class="map-info-value">
+              Easily accessible from all major areas of Hyderabad
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-info-row">
+
+          <div class="map-info-icon">🎓</div>
+
+          <div>
+            <div class="map-info-label">Programmes</div>
+
+            <div class="map-info-value">
+              Montessori learning for Toddlers, LKG & UKG
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-info-row">
+
+          <div class="map-info-icon">🕘</div>
+
+          <div>
+            <div class="map-info-label">School Timings</div>
+
+            <div class="map-info-value">
+              Mon – Sat: 9:00 AM – 3:00 PM<br>
+              Campus visits welcome
+            </div>
+          </div>
+
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/TFvkrmh1gE4bEsLu6"
+          target="_blank"
+          class="map-directions-btn">
+
+          Get Directions
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+  background:linear-gradient(160deg, var(--maroon), var(--maroon2));
+  padding:90px 24px 110px;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact-section::before{
+  content:'';
+
+  position:absolute;
+
+  top:-120px;
+  right:-120px;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.05);
+}
+
+.contact-section::after{
+  content:'';
+
+  position:absolute;
+
+  bottom:-180px;
+  left:-120px;
+
+  width:360px;
+  height:360px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.04);
+}
+
+.contact-inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.contact-eyebrow,
+.map-eyebrow{
+  width:fit-content;
+  margin:0 auto 18px;
+
+  padding:6px 16px;
+
+  border:1px solid rgba(245,166,35,0.6);
+
+  border-radius:999px;
+
+  color:#f5a623;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.contact-title{
+  text-align:center;
+
+  font-size:3rem;
+  line-height:1.1;
+
+  color:#fff;
+
+  font-family:'Playfair Display', serif;
+
+  margin-bottom:10px;
+}
+
+.contact-subtitle{
+  text-align:center;
+
+  color:rgba(255,255,255,0.7);
+
+  font-size:14px;
+
+  margin-bottom:46px;
+}
+
+/* TOP GRID */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:14px;
+
+  max-width:690px;
+
+  margin:0 auto 50px;
+}
+
+.contact-card{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+
+  background:rgba(255,255,255,0.04);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  border-radius:14px;
+
+  padding:16px 18px;
+}
+
+.contact-icon{
+  width:34px;
+  height:34px;
+
+  border-radius:10px;
+
+  background:#f5a623;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:16px;
+
+  flex-shrink:0;
+}
+
+.contact-card-label{
+  color:#fff;
+
+  font-size:13px;
+  font-weight:700;
+
+  margin-bottom:4px;
+}
+
+.contact-card-value,
+.contact-card-value a{
+  color:rgba(255,255,255,0.72);
+
+  font-size:13px;
+  line-height:1.6;
+
+  text-decoration:none;
+}
+
+/* DIVIDER */
+
+.map-divider{
+  width:40px;
+  height:2px;
+
+  background:#f5a623;
+
+  margin:0 auto 34px;
+}
+
+/* MAP */
+
+.map-title{
+  text-align:center;
+
+  color:#fff;
+
+  font-size:2.3rem;
+
+  font-family:'Playfair Display', serif;
+
+  margin-bottom:34px;
+}
+
+.map-layout{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+
+  gap:18px;
+
+  align-items:stretch;
+
+  max-width:1100px;
+
+  margin:0 auto;
+}
+
+/* REAL MAP */
+
+.map-embed{
+  width:100%;
+  min-height:420px;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  background:#fff;
+}
+
+.map-embed iframe{
+  width:100%;
+  height:100%;
+  min-height:420px;
+
+  display:block;
+}
+
+/* INFO CARD */
+
+.map-info-card{
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  border-radius:18px;
+
+  padding:26px;
+}
+
+.map-info-title{
+  color:#fff;
+
+  font-size:1.1rem;
+  font-weight:700;
+
+  margin-bottom:24px;
+}
+
+.map-info-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+
+  margin-bottom:22px;
+}
+
+.map-info-icon{
+  width:24px;
+  height:24px;
+
+  border-radius:8px;
+
+  background:rgba(245,166,35,0.15);
+
+  color:#f5a623;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:13px;
+
+  flex-shrink:0;
+}
+
+.map-info-label{
+  color:rgba(255,255,255,0.45);
+
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+
+  margin-bottom:4px;
+}
+
+.map-info-value{
+  color:#fff;
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+.map-directions-btn{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:10px;
+
+  background:#f5a623;
+
+  color:#fff;
+
+  padding:14px 18px;
+
+  border-radius:999px;
+
+  font-size:14px;
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.map-directions-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .map-layout{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .contact-section{
+    padding:72px 18px 90px;
+  }
+
+  .contact-title{
+    font-size:2.1rem;
+  }
+
+  .map-title{
+    font-size:1.8rem;
+  }
+
+  .map-embed,
+  .map-embed iframe{
+    min-height:320px;
+  }
+
+}
+
+</style>
+
+  
 
   <!-- =========================
        FOOTER

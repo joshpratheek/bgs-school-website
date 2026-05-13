@@ -354,7 +354,7 @@ body{
 
     <a href="#about">About</a>
 
-    <a href="#why-choose-us">Why BGS</a>
+    <a href="#campus-gallery">Campus Gallery</a>
 
     <a href="onekynd.html" class="one-kynd-btn-mobile">
       One Kynd
@@ -503,7 +503,7 @@ document.addEventListener('click', function(e) {
                     <div class="bgs-pills">
                         <span>Phonics • Creativity • Early Learning • Montessori Play</span>
                     </div>
-                    <a href="#about" class="bgs-btn bgs-mont-btn">Learn More</a>
+                    <a href="onekynd.html" class="bgs-btn bgs-mont-btn">Learn More</a>
                 </div>
 
                 <!-- ✅ FIXED: 2 images stacked, matching left content height -->
@@ -1312,6 +1312,32 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
         margin-top: 0 !important;
     }
 }
+
+@media (max-width: 640px) {
+
+  .bgs-arrow {
+    position: absolute !important;
+    top: 55vh !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem !important;
+
+    z-index: 9999 !important;
+  }
+
+  .bgs-prev {
+    left: 10px !important;
+  }
+
+  .bgs-next {
+    right: 10px !important;
+  }
+
+}
+
 </style>
 
 <script>
@@ -4454,6 +4480,7 @@ SLIDE 4 — FIXED 2 IMAGE LAYOUT
     btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg> Send Question';
   }
 </script>
+
 
 <!-- FOOTER SECTION -->
 
