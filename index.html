@@ -1218,6 +1218,10 @@ body{
     touch-action:auto !important;
 }
 
+.bgs-hero-slider{
+    touch-action: pan-y;
+}
+
 </style>
 
 <script>
@@ -1312,21 +1316,31 @@ slider.addEventListener("touchstart", function(e) {
     touchStartY = e.changedTouches[0].screenY;
 }, { passive: true });
 
-slider.addEventListener("touchend", function(e) {
-    let touchEndX = e.changedTouches[0].screenX;
-    let touchEndY = e.changedTouches[0].screenY;
+let startX = 0;
+let startY = 0;
 
-    let diffX = touchStartX - touchEndX;
-    let diffY = touchStartY - touchEndY;
+slider.addEventListener("pointerdown", function(e) {
+    startX = e.clientX;
+    startY = e.clientY;
+});
 
-    if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+slider.addEventListener("pointerup", function(e) {
+    let endX = e.clientX;
+    let endY = e.clientY;
+
+    let diffX = startX - endX;
+    let diffY = startY - endY;
+
+    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
         if (diffX > 0) {
             nextSlide();
         } else {
             prevSlide();
         }
+
+        pauseThenResume();
     }
-}, { passive: true });
+});
 
 goTo(0);
 
