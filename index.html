@@ -1314,13 +1314,6 @@ if (window.innerWidth > 768) {
 
 </script>
 
-<script>
-document.addEventListener("touchmove", function () {
-  document.documentElement.style.overflowY = "auto";
-  document.body.style.overflowY = "auto";
-}, { passive: true });
-</script>
-
 </div>
 
 
@@ -3336,11 +3329,6 @@ html, body {
     }
   }, { passive: false });
 
-  carousel.addEventListener("touchmove", function (e) {
-    if (isTransitioning) {
-      e.preventDefault();
-    }
-  }, { passive: false });
 
   carousel.addEventListener("touchend", function (e) {
     if (isTransitioning) {
@@ -3350,11 +3338,6 @@ html, body {
   }, { passive: false });
 
   // MOBILE FIX: Prevent wheel and scroll on carousel
-  carousel.addEventListener("wheel", function (e) {
-    if (e.deltaY !== 0) {
-      e.preventDefault();
-    }
-  }, { passive: false });
 
   renderSlides();
   renderThumbnails();
