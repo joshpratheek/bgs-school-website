@@ -1304,6 +1304,30 @@ body{
         });
     });
 
+    let touchStartX = 0;
+let touchStartY = 0;
+
+slider.addEventListener("touchstart", function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+slider.addEventListener("touchend", function(e) {
+    let touchEndX = e.changedTouches[0].screenX;
+    let touchEndY = e.changedTouches[0].screenY;
+
+    let diffX = touchStartX - touchEndX;
+    let diffY = touchStartY - touchEndY;
+
+    if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }
+}, { passive: true });
+
 goTo(0);
 
 if (window.innerWidth > 768) {
