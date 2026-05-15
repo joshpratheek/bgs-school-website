@@ -1207,6 +1207,17 @@ document.addEventListener('click', function(e) {
     .bgs-next { right: 10px !important; }
     .bgs-dots { bottom: 16px !important; }
 }
+
+html,
+body{
+    overflow-y:auto !important;
+    height:auto !important;
+}
+
+body{
+    touch-action:auto !important;
+}
+
 </style>
 
 <script>
@@ -1299,6 +1310,15 @@ if (window.innerWidth > 768) {
     startAuto();
 }
 })();
+</script>
+
+</script>
+
+<script>
+document.addEventListener("touchmove", function () {
+  document.documentElement.style.overflowY = "auto";
+  document.body.style.overflowY = "auto";
+}, { passive: true });
 </script>
 
 </div>
