@@ -1240,9 +1240,9 @@ body{
     var autoTimer = null;
     var restartTimer = null;
     var isPaused = false;
-    var touchStartX = 0;
-    var touchStartY = 0;
 
+    var startX = 0;
+    var startY = 0;
 
     function goTo(index) {
         current = (index + total) % total;
@@ -1251,11 +1251,15 @@ body{
         dots.forEach(function(dot, i) {
             dot.classList.toggle('bgs-dot-active', i === current);
         });
-
     }
 
-    function nextSlide() { goTo(current + 1); }
-    function prevSlide() { goTo(current - 1); }
+    function nextSlide() {
+        goTo(current + 1);
+    }
+
+    function prevSlide() {
+        goTo(current - 1);
+    }
 
     function startAuto() {
         clearInterval(autoTimer);
@@ -1282,19 +1286,20 @@ body{
     function pauseThenResume() {
         pauseSlider();
         clearTimeout(restartTimer);
-        restartTimer = setTimeout(resumeSlider, 5000);
+
+        if (window.innerWidth > 768) {
+            restartTimer = setTimeout(resumeSlider, 5000);
+        }
     }
 
     nextBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
         nextSlide();
         pauseThenResume();
     });
 
     prevBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
         prevSlide();
         pauseThenResume();
     });
@@ -1302,54 +1307,40 @@ body{
     dots.forEach(function(dot) {
         dot.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
             goTo(parseInt(this.getAttribute('data-index'), 10));
             pauseThenResume();
         });
     });
 
-    let touchStartX = 0;
-let touchStartY = 0;
+    slider.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    }, { passive: true });
 
-slider.addEventListener("touchstart", function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-}, { passive: true });
+    slider.addEventListener('touchend', function(e) {
+        var endX = e.changedTouches[0].clientX;
+        var endY = e.changedTouches[0].clientY;
 
-let startX = 0;
-let startY = 0;
+        var diffX = startX - endX;
+        var diffY = startY - endY;
 
-slider.addEventListener("pointerdown", function(e) {
-    startX = e.clientX;
-    startY = e.clientY;
-});
+        if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
 
-slider.addEventListener("pointerup", function(e) {
-    let endX = e.clientX;
-    let endY = e.clientY;
-
-    let diffX = startX - endX;
-    let diffY = startY - endY;
-
-    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX > 0) {
-            nextSlide();
-        } else {
-            prevSlide();
+            pauseThenResume();
         }
+    }, { passive: true });
 
-        pauseThenResume();
+    goTo(0);
+
+    if (window.innerWidth > 768) {
+        startAuto();
     }
-});
-
-goTo(0);
-
-if (window.innerWidth > 768) {
-    startAuto();
-}
 })();
-</script>
-
 </script>
 
 </div>
