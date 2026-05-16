@@ -3542,37 +3542,35 @@ html, body {
 })();
 </script>
 
-<!-- ADMISSION FORM SECTION -->
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init('kRrCq1PElIKVH0R_h');
+</script>
 
 <style>
-
 .admission-bg {
   width: 100%;
   background: #0a1540;
   padding: 90px 24px;
   margin: 0;
 }
-
 .admission-form-section {
   max-width: 920px;
   margin: 0 auto;
   background: #ffffff;
   border-radius: 34px;
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.35),
-    0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.04);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
   position: relative;
 }
-
 .form-header {
   background: linear-gradient(135deg, #0f1e5c 0%, #142c6e 100%);
   padding: 2.4rem 2rem;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
 .form-header h1 {
   font-family: 'Playfair Display', serif;
   color: white;
@@ -3580,28 +3578,23 @@ html, body {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
-
 .form-header p {
   color: #c4d0ef;
   font-size: 0.9rem;
 }
-
 .form-body {
   padding: 3rem;
 }
-
 .form-row {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
-
 .form-group {
   flex: 1;
   min-width: 200px;
 }
-
 .form-group label {
   display: block;
   font-weight: 600;
@@ -3610,7 +3603,6 @@ html, body {
   font-size: 0.85rem;
   letter-spacing: 0.3px;
 }
-
 .form-group input,
 .form-group select {
   width: 100%;
@@ -3621,15 +3613,14 @@ html, body {
   font-size: 0.9rem;
   transition: all 0.2s;
   background: #fefefe;
+  box-sizing: border-box;
 }
-
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: #f5a623;
   box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
 }
-
 .submit-btn {
   background: #f5a623;
   color: #0f1e5c;
@@ -3644,33 +3635,40 @@ html, body {
   margin-top: 0.5rem;
   font-family: 'DM Sans', sans-serif;
 }
-
 .submit-btn:hover {
   background: #ffb73c;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(245,166,35,0.3);
 }
-
-@media (max-width: 640px) {
-
-  .admission-bg {
-    padding: 60px 16px;
-  }
-
-  .form-body {
-    padding: 1.5rem;
-  }
-
-  .form-row {
-    gap: 1rem;
-  }
-
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
-
+.admission-success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: rgba(37,211,102,0.12);
+  border: 1px solid rgba(37,211,102,0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 1rem;
+  color: #1a9e4a;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.admission-success.show {
+  display: flex;
+}
+@media (max-width: 640px) {
+  .admission-bg { padding: 60px 16px; }
+  .form-body { padding: 1.5rem; }
+  .form-row { gap: 1rem; }
+}
 </style>
 
 <section class="admission-bg" id="admission-form" aria-label="British Grammar School admission application form">
-
   <div class="admission-form-section">
 
     <div class="form-header">
@@ -3680,70 +3678,99 @@ html, body {
 
     <div class="form-body">
 
-      <form action="https://formsubmit.co/ajpratheek@gmail.com" method="POST">
-
-        <input type="hidden" name="_subject" value="New Admission Application — British Grammar School">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://britishgrammarschool.local/">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Student Name *</label>
-            <input type="text" name="Student Name" placeholder="Full name" required>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Student Name *</label>
+          <input type="text" id="admStudentName" placeholder="Full name">
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Parent/Guardian Name *</label>
-            <input type="text" name="Parent Guardian Name" placeholder="Full name" required>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Parent / Guardian Name *</label>
+          <input type="text" id="admParentName" placeholder="Full name">
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Class Applying For *</label>
-
-            <select name="Class Applying For" required>
-
-              <option value="">--- Select Choice ---</option>
-              <option value="LKG">LKG</option>
-              <option value="UKG">UKG</option>
-              <option value="Class 1">Class 1</option>
-              <option value="Class 2">Class 2</option>
-              <option value="Class 3">Class 3</option>
-              <option value="Class 4">Class 4</option>
-              <option value="Class 5">Class 5</option>
-              <option value="Class 6">Class 6</option>
-              <option value="Class 7">Class 7</option>
-              <option value="Class 8">Class 8</option>
-              <option value="Class 9">Class 9</option>
-              <option value="Class 10">Class 10</option>
-
-            </select>
-
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Class Applying For *</label>
+          <select id="admClass">
+            <option value="">--- Select Class ---</option>
+            <option value="LKG">LKG</option>
+            <option value="UKG">UKG</option>
+            <option value="Class 1">Class 1</option>
+            <option value="Class 2">Class 2</option>
+            <option value="Class 3">Class 3</option>
+            <option value="Class 4">Class 4</option>
+            <option value="Class 5">Class 5</option>
+            <option value="Class 6">Class 6</option>
+            <option value="Class 7">Class 7</option>
+            <option value="Class 8">Class 8</option>
+            <option value="Class 9">Class 9</option>
+            <option value="Class 10">Class 10</option>
+          </select>
         </div>
+      </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" name="Phone Number" placeholder="+91 XXXXXXXXXX" required>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="admPhone" placeholder="+91 XXXXXXXXXX">
         </div>
+      </div>
 
-        <button type="submit" class="submit-btn">
-          Submit Application
-        </button>
+      <button class="submit-btn" id="admBtn" onclick="submitAdmission()">
+        Submit Application
+      </button>
 
-      </form>
+      <div class="admission-success" id="admSuccess">
+        ✅ &nbsp; Application submitted! We will contact you within 24 hours.
+      </div>
 
     </div>
-
   </div>
-
 </section>
+
+<script>
+  async function submitAdmission() {
+    const studentName = document.getElementById('admStudentName').value.trim();
+    const parentName  = document.getElementById('admParentName').value.trim();
+    const classFor    = document.getElementById('admClass').value;
+    const phone       = document.getElementById('admPhone').value.trim();
+    const btn         = document.getElementById('admBtn');
+
+    if (!studentName || !parentName || !classFor || !phone) {
+      alert('Please fill in all fields before submitting.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    try {
+     await emailjs.send('ajpratheek@gmail.com', 'template_xhn40xe', {
+        student_name   : studentName,
+        parent_name    : parentName,
+        class_applying : classFor,
+        phone_number   : phone
+      });
+
+      document.getElementById('admSuccess').classList.add('show');
+      document.getElementById('admStudentName').value = '';
+      document.getElementById('admParentName').value  = '';
+      document.getElementById('admClass').value       = '';
+      document.getElementById('admPhone').value       = '';
+
+   } catch (error) {
+  alert('EmailJS Error: ' + JSON.stringify(error));
+  console.error('EmailJS error:', error);
+}
+
+    btn.disabled = false;
+    btn.textContent = 'Submit Application';
+  }
+</script>
 
 <!-- CONTACT SECTION -->
 
@@ -4427,42 +4454,37 @@ html, body {
 
       </div>
 
-      <!-- Ask a Question Form -->
-      <div class="ask-wrap">
-        <div class="ask-title">Still have a question?</div>
-        <div class="ask-sub">Fill in the form and we'll reply to your email directly.</div>
+     <!-- Ask a Question Form -->
+<div class="ask-wrap">
+  <div class="ask-title">Still have a question?</div>
+  <div class="ask-sub">Fill in the form and we'll reply to your email directly.</div>
 
-        <div class="ask-row">
-          <div class="ask-field">
-            <label>Your Name</label>
-            <input type="text" id="askName" placeholder="e.g. Priya Sharma">
-          </div>
-          <div class="ask-field">
-            <label>Your Email</label>
-            <input type="email" id="askEmail" placeholder="you@example.com">
-          </div>
-        </div>
-
-        <div class="ask-field ask-field-full">
-          <label>Your Question</label>
-          <textarea id="askMessage" rows="4" placeholder="Type your question here…"></textarea>
-        </div>
-
-        <button class="ask-submit" id="askBtn" onclick="sendQuestion()">
-          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-          Send Question
-        </button>
-
-        <div class="ask-success" id="askSuccess">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Your question has been sent! We'll reply to your email shortly.
-        </div>
-      </div>
-
+  <div class="ask-row">
+    <div class="ask-field">
+      <label>Your Name</label>
+      <input type="text" id="askName" placeholder="e.g. Priya Sharma">
     </div>
-
+    <div class="ask-field">
+      <label>Your Email</label>
+      <input type="email" id="askEmail" placeholder="you@example.com">
+    </div>
   </div>
-</section>
+
+  <div class="ask-field ask-field-full">
+    <label>Your Question</label>
+    <textarea id="askMessage" rows="4" placeholder="Type your question here…"></textarea>
+  </div>
+
+  <button class="ask-submit" id="askBtn" onclick="sendQuestion()">
+    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    Send Question
+  </button>
+
+  <div class="ask-success" id="askSuccess">
+    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+    Your question has been sent! We'll reply to your email shortly.
+  </div>
+</div>
 
 <script>
   function toggleFaq(btn) {
@@ -4487,22 +4509,20 @@ html, body {
     btn.innerHTML = 'Sending…';
 
     try {
-      const res = await fetch('https://formspree.io/f/mvzlwrqq', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+      await emailjs.send('ajpratheek@gmail.com', 'template_2y1413i', {
+        from_name  : name,
+        from_email : email,
+        message    : message
       });
 
-      if (res.ok) {
-        document.getElementById('askSuccess').classList.add('show');
-        document.getElementById('askName').value    = '';
-        document.getElementById('askEmail').value   = '';
-        document.getElementById('askMessage').value = '';
-      } else {
-        alert('Something went wrong. Please try again.');
-      }
-    } catch (err) {
-      alert('Network error. Please check your connection.');
+      document.getElementById('askSuccess').classList.add('show');
+      document.getElementById('askName').value    = '';
+      document.getElementById('askEmail').value   = '';
+      document.getElementById('askMessage').value = '';
+
+    } catch (error) {
+      alert('EmailJS Error: ' + JSON.stringify(error));
+      console.error('EmailJS error:', error);
     }
 
     btn.disabled = false;
@@ -4669,6 +4689,9 @@ html, body {
     &copy; 2026 British Grammar School, Secunderabad. All rights reserved.
   </div>
 </footer>
+
+
+<!--WHATSAPP WIDGET-->
 
   <style>
     #wa-widget,
@@ -4960,15 +4983,25 @@ html, body {
 
   document.getElementById('wa-start').href = waURL;
 
-  const popup  = document.getElementById('wa-popup');
-  const fab    = document.getElementById('wa-fab');
+  const popup    = document.getElementById('wa-popup');
+  const fab      = document.getElementById('wa-fab');
   const closeBtn = document.getElementById('wa-close-btn');
 
-  fab.addEventListener('click', () => {
+  fab.addEventListener('click', (e) => {
+    e.stopPropagation();
     popup.classList.toggle('open');
   });
 
-  closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.remove('open');
+  });
+
+  popup.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', () => {
     popup.classList.remove('open');
   });
 </script>
