@@ -370,33 +370,6 @@ body{
 
 </nav>
 
-<script>
-
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const navbar = document.getElementById('navbar');
-
-function closeMenu() {
-  mobileMenu.classList.remove('active');
-}
-
-hamburger.addEventListener('click', function(e) {
-  e.stopPropagation();
-  mobileMenu.classList.toggle('active');
-});
-
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
-
-document.addEventListener('click', function(e) {
-  if (!navbar.contains(e.target)) {
-    closeMenu();
-  }
-});
-
-</script>
-
 <!-- HERO -->
 
 <div id="home">
@@ -407,7 +380,7 @@ document.addEventListener('click', function(e) {
         <div class="bgs-slide bgs-slide-1">
             <div class="bgs-inner bgs-z-default">
                 <div class="bgs-text">
-                    <div class="bgs-badge">SSC Curriculum &middot; LKG to Class 10 &middot; Secunderabad</div>
+              
                     <h1>Top-Rated <span>SSC School</span><br>in Secunderabad</h1>
                     <p>British Grammar School is one of Secunderabad's most trusted SSC schools, offering high-quality, value-based education from LKG to Class 10. Our Telangana SSC board-aligned curriculum builds strong academic foundations while developing critical thinking, creativity, and character in every child.</p>
                     <p>With experienced teachers, smart classrooms, and a proven track record of 100% SSC board pass results, we prepare every student for academic success and a confident future.</p>
@@ -440,7 +413,7 @@ document.addEventListener('click', function(e) {
         <div class="bgs-slide bgs-slide-2">
             <div class="bgs-inner bgs-z-default">
                 <div class="bgs-text">
-                    <div class="bgs-badge">SSC Board Results 2026</div>
+                 
                     <h1>Our Star<br><span>Toppers</span></h1>
                     <div class="bgs-ssc-tag">100% Pass Result &middot; SSC Exams 2026</div>
                     <p>British Grammar School, Secunderabad proudly celebrates its Class 10 SSC board toppers. Their exceptional results reflect our school's consistent commitment to academic excellence, highly qualified faculty, rigorous exam preparation, and a nurturing learning environment that brings out the best in every student.</p>
@@ -490,7 +463,6 @@ document.addEventListener('click', function(e) {
                 </div>
 
                 <div class="bgs-text">
-                    <div class="bgs-badge">Our Legacy &middot; British Grammar School &middot; Est. 2010</div>
                     <h1>15 Years of <span>Shaping Futures</span></h1>
                     <p>Established in 2010, British Grammar School, Secunderabad has been a cornerstone of quality SSC education in Telangana for over 15 years. From our first batch to thousands of successful alumni, we have built an enduring reputation for academic rigour, compassionate teaching, and holistic student development.</p>
                     <p>Our consistent 100% SSC board pass results, highly qualified faculty, modern smart classrooms, and strong community values make us one of the most trusted schools in Secunderabad.</p>
@@ -502,7 +474,6 @@ document.addEventListener('click', function(e) {
         <div class="bgs-slide bgs-slide-4">
             <div class="bgs-inner bgs-z-default">
                 <div class="bgs-text">
-                    <div class="bgs-badge bgs-badge-mont">One Kynd Montessori &middot; LKG &amp; UKG &middot; Hyderabad</div>
                     <h1>Where Little Minds<br><span>Begin to Bloom</span></h1>
                     <div class="bgs-mont-rule"></div>
                     <p><strong>One Kynd Montessori, Hyderabad</strong> is a thoughtfully designed pre-primary programme giving children the strongest possible start to their lifelong learning journey. We blend internationally inspired Montessori principles with structured early childhood education to develop cognitive, emotional, creative, and social skills from day one.</p>
@@ -632,7 +603,7 @@ document.addEventListener('click', function(e) {
 .bgs-slide-1 {
     background:
         linear-gradient(rgba(7,17,36,0.45), rgba(7,17,36,0.58)),
-        url('images/building.png');
+        url('images/buildingm.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -1288,10 +1259,7 @@ body{
     function pauseThenResume() {
         pauseSlider();
         clearTimeout(restartTimer);
-
-        if (window.innerWidth > 768) {
-            restartTimer = setTimeout(resumeSlider, 5000);
-        }
+        restartTimer = setTimeout(resumeSlider, 5000);
     }
 
     nextBtn.addEventListener('click', function(e) {
@@ -1338,10 +1306,7 @@ body{
     }, { passive: true });
 
     goTo(0);
-
-    if (window.innerWidth > 768) {
-        startAuto();
-    }
+    startAuto();
 })();
 </script>
 
@@ -1520,7 +1485,7 @@ body{
     }
   </style>
 
-  <!--FUNDER MESSAGE-->
+  <!--FOUNDER MESSAGE-->
 
 
 <section class="msg-section" id="chairman-message" aria-label="Message from Dr. Khadar Khan, Chairman and Founder of British Grammar School Secunderabad">
@@ -2500,7 +2465,7 @@ body{
     </div>
 </section>
 
-
+</style>
 
 <!-- WHY CHOOSE US -->
 
@@ -2817,7 +2782,7 @@ body{
 }
 </style>
   
-<!-- CAMPUS GALLERY SECTION - MOBILE GLITCH FIXED -->
+<!-- CAMPUS GALLERY SECTION - MOBILE ARROW NAV -->
 
 <section class="gallery-section" id="campus-gallery">
   <div class="gallery-container">
@@ -2856,12 +2821,6 @@ body{
   -webkit-touch-callout: none;
 }
 
-html, body {
-  overflow-anchor: none !important;
-  scroll-behavior: auto !important;
-  overscroll-behavior: none;
-}
-
 .gallery-section {
   width: 100%;
   background: linear-gradient(135deg, #0a1128 0%, #1a2847 100%);
@@ -2869,7 +2828,6 @@ html, body {
   font-family: 'DM Sans', sans-serif;
   position: relative;
   z-index: 1;
-  overflow-anchor: none;
   box-sizing: border-box;
 }
 
@@ -2935,8 +2893,6 @@ html, body {
   border-radius: 18px;
   box-shadow: 0 22px 65px rgba(0,0,0,0.38);
   background: #071124;
-  contain: layout style paint;
-  overflow-anchor: none;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -2945,11 +2901,8 @@ html, body {
   display: flex;
   width: 100%;
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-  scroll-behavior: auto;
-  touch-action: none;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  will-change: auto;
 }
 
 .carousel-slide {
@@ -3098,6 +3051,7 @@ html, body {
   user-select: none;
 }
 
+/* Tablet and below: keep thumbnails, just fewer columns */
 @media (max-width: 768px) {
   .gallery-section {
     padding: 55px 16px 75px;
@@ -3108,9 +3062,9 @@ html, body {
   }
 
   .carousel-nav {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
   }
 
   .carousel-nav.prev {
@@ -3120,18 +3074,9 @@ html, body {
   .carousel-nav.next {
     right: 10px;
   }
-
-  .carousel-thumbnails {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-bottom: 0px;
-  }
-
-  .thumbnail {
-    height: 58px;
-  }
 }
 
+/* Mobile: hide the thumbnail grid entirely, arrows + counter only */
 @media (max-width: 480px) {
   .gallery-header h2 {
     font-size: 2.1rem;
@@ -3146,26 +3091,23 @@ html, body {
   }
 
   .carousel-thumbnails {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 0px;
-  }
-
-  .thumbnail {
-    height: 54px;
+    display: none;
   }
 
   .slide-counter {
-    font-size: 12px;
-    padding: 8px 12px;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    font-size: 15px;
+    padding: 8px 18px;
+  }
+
+  .carousel-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
 }
-
-@supports (overflow-anchor: none) {
-  html {
-    overflow-anchor: none;
-  }
-}
-
 </style>
 
 <script>
@@ -3173,8 +3115,6 @@ html, body {
   let currentSlide = 0;
   let currentYear = "2026";
   let isTransitioning = false;
-  let scrollLocked = false;
-  const scrollLockDuration = 100;
 
   const imageData = {
     "2026": [
@@ -3210,24 +3150,6 @@ html, body {
   const slideTotalCounter = document.getElementById("slideTotalCounter");
   const thumbnails = document.getElementById("thumbnails");
   const yearTabs = document.querySelectorAll(".year-tab");
-  const gallerySection = document.getElementById("campus-gallery");
-
-  // MOBILE FIX: Lock scroll during transitions
-  function lockScroll() {
-    scrollLocked = true;
-    const scrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.top = -scrollY + 'px';
-    
-    setTimeout(() => {
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      window.scrollTo(0, scrollY);
-      scrollLocked = false;
-    }, scrollLockDuration);
-  }
 
   function renderSlides() {
     carousel.innerHTML = "";
@@ -3240,7 +3162,7 @@ html, body {
       img.src = src;
       img.alt = "British Grammar School campus gallery " + currentYear + " image " + (index + 1);
       img.loading = "lazy";
-      
+
       slide.appendChild(img);
       carousel.appendChild(slide);
     });
@@ -3257,17 +3179,12 @@ html, body {
 
       thumb.innerHTML = `<div class="thumbnail-number">${index + 1}</div>`;
 
-      const clickHandler = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!isTransitioning && !scrollLocked) {
+      thumb.addEventListener("click", function () {
+        if (!isTransitioning) {
           currentSlide = index;
           updateCarousel();
         }
-      };
-
-      thumb.addEventListener("click", clickHandler);
-      thumb.addEventListener("touchend", clickHandler);
+      });
 
       thumbnails.appendChild(thumb);
     });
@@ -3275,10 +3192,9 @@ html, body {
 
   function updateCarousel() {
     if (isTransitioning) return;
-    
+
     isTransitioning = true;
-    lockScroll();
-    
+
     carousel.style.transform = "translateX(-" + currentSlide * 100 + "%)";
 
     slideCounter.textContent = currentSlide + 1;
@@ -3293,31 +3209,23 @@ html, body {
     }, 550);
   }
 
-  function nextSlide(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (!isTransitioning && !scrollLocked) {
+  function nextSlide() {
+    if (!isTransitioning) {
       currentSlide = (currentSlide + 1) % imageData[currentYear].length;
       updateCarousel();
     }
   }
 
-  function prevSlide(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (!isTransitioning && !scrollLocked) {
+  function prevSlide() {
+    if (!isTransitioning) {
       currentSlide = (currentSlide - 1 + imageData[currentYear].length) % imageData[currentYear].length;
       updateCarousel();
     }
   }
 
   function changeYear(year) {
-    if (isTransitioning || scrollLocked) return;
-    
+    if (isTransitioning) return;
+
     currentYear = year;
     currentSlide = 0;
 
@@ -3330,52 +3238,20 @@ html, body {
     updateCarousel();
   }
 
-  // Event listeners with both click and touch
   nextBtn.addEventListener("click", nextSlide);
-  nextBtn.addEventListener("touchend", nextSlide);
   prevBtn.addEventListener("click", prevSlide);
-  prevBtn.addEventListener("touchend", prevSlide);
 
   yearTabs.forEach(function (tab) {
-    const changeYearHandler = function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    tab.addEventListener("click", function () {
       changeYear(tab.dataset.year);
-    };
-    tab.addEventListener("click", changeYearHandler);
-    tab.addEventListener("touchend", changeYearHandler);
+    });
   });
-
-  // MOBILE FIX: Prevent unwanted scroll events
-  document.addEventListener("scroll", function () {
-    if (scrollLocked && isTransitioning) {
-      window.scrollTo(0, window.scrollY);
-    }
-  }, { passive: false });
-
-  // MOBILE FIX: Prevent default touch behaviors
-  carousel.addEventListener("touchstart", function (e) {
-    if (isTransitioning) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-
-
-  carousel.addEventListener("touchend", function (e) {
-    if (isTransitioning) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }, { passive: false });
-
-  // MOBILE FIX: Prevent wheel and scroll on carousel
 
   renderSlides();
   renderThumbnails();
   updateCarousel();
 })();
 </script>
-
 
 <!-- ADMISSIONS SECTION -->
 
